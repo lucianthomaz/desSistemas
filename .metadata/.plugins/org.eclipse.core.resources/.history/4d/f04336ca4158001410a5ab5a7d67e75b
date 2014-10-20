@@ -1,0 +1,18 @@
+import java.util.HashSet;
+
+
+public class Room {
+	private int capacity;
+	private String roomName;
+	private HashSet<Class> classes;
+	
+	public Room (int capacity, String name){
+		this.capacity = capacity;
+		this.roomName = name;
+		this.classes = new HashSet<Class>();
+	}
+	
+	public boolean addClass(Class c){
+		return classes.add(c);
+	}
+}

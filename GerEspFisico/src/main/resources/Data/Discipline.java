@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.HashSet;
 
 
 public class Discipline {
@@ -6,14 +6,14 @@ public class Discipline {
 	private int credit;
 	private String name;
 	private int module;
-	private ArrayList<Class> classes;
+	private HashSet<Class> classes;
 	
 	public Discipline(String code, int credit, String name, int module){
 		this.code = code;
 		this.credit = credit;
 		this.name = name;
 		this.module = module;
-		this.classes = new ArrayList<Class>();
+		this.classes = new HashSet<Class>();
 	}
 	
 	public String getCode(){
