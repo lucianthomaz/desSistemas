@@ -1,0 +1,26 @@
+package clek.persistence;
+
+import java.util.ArrayList;
+
+import clek.model.*;
+
+public class BD {
+	public ArrayList<Room> listRooms;
+	public ArrayList<StudentsClass> listStudentsClass;
+	public ArrayList<Course> listCourse;
+	
+	private static BD instance;
+	
+	private BD(){
+		listRooms = new ArrayList<Room>();
+		listStudentsClass = new ArrayList<StudentsClass>();
+		listCourse = new ArrayList<Course>();
+	}
+	
+	public static synchronized BD getInstance(){
+		if (instance == null){
+			instance = new BD();
+		}
+		return instance;
+	}
+}

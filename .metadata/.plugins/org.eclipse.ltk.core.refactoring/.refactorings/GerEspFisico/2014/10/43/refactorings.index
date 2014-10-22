@@ -3,3 +3,14 @@
 1413944233338	Move 'DayOfWeek.java' to 'Data'
 1413944788403	Copy compilation unit
 1413944798091	Delete element
+1414007091752	Move 'Time.java' to 'Data'
+1414009293613	Rename resource 'Discipline.java'
+1414009471350	Rename resource 'Class.java'
+1414011586015	Rename resource 'ClassCourse.java'
+1414012072239	Move 'Service.java' to 'operations'
+1414012250203	Delete element
+1414012332818	Move 6 resources to 'model'
+1414012435012	Move 'BD.java' to 'persistence'
+1414012440746	Move 'Distributor.java' to 'logic'
+1414012449122	Delete element
+1414012453607	Delete element
