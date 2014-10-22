@@ -6,7 +6,7 @@ public class Discipline {
 	private int credit;
 	private String name;
 	private int module;
-	private HashSet<Class> classes;
+	public HashSet<Class> classes;
 	
 	public Discipline(String code, int credit, String name, int module){
 		this.code = code;
@@ -30,9 +30,5 @@ public class Discipline {
 	
 	public int getModule(){
 		return this.module;
-	}
-	
-	public boolean addClass(Class aClass){
-		return classes.add(aClass);
 	}
 }
