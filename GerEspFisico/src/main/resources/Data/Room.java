@@ -1,7 +1,5 @@
 import java.util.HashSet;
-import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "room")
 public class Room {
 	private int capacity;
 	private String roomName;
@@ -13,7 +11,6 @@ public class Room {
 		this.classes = new HashSet<Class>();
 	}
 	
-	@XmlElement
 	public String getRoomName(){
 		return roomName;
 	}
@@ -22,7 +19,6 @@ public class Room {
 		return classes.add(c);
 	}
 	
-	@XmlElement
 	public int getCapacity(){
 		return capacity;
 	}

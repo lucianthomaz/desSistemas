@@ -1,2 +1,5 @@
 1413773231887	Rename resource 'Disciplina.java'
 1413800650436	Move 'BD.java' to 'Logic'
+1413944233338	Move 'DayOfWeek.java' to 'Data'
+1413944788403	Copy compilation unit
+1413944798091	Delete element
