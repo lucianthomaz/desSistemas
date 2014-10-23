@@ -1,0 +1,5 @@
+package com.clek.gef.model;
+
+public class Room {
+
+}

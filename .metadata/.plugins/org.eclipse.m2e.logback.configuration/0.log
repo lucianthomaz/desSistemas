@@ -807,3 +807,363 @@
 2014-10-23 02:56:45,003 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2014-10-23 02:56:45,019 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2014-10-23 02:56:45,019 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\test\resources
+2014-10-23 10:12:45,536 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GerenciamentoEspacoFisico:GerEspFisico:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\pom.xml.
+2014-10-23 10:12:48,458 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GerEspFisico/src/main/java
+2014-10-23 10:12:48,458 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GerEspFisico/src/test/java
+2014-10-23 10:12:49,193 [Worker-2] ERROR o.e.m2e.wtp.WTPProjectConfigurator - Unable to configure GerEspFisico
+org.eclipse.m2e.wtp.MarkedException: Unable to configure GerEspFisico
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:97) ~[na:na]
+	at org.eclipse.m2e.wtp.WTPProjectConfigurator.configure(WTPProjectConfigurator.java:70) ~[na:na]
+	at org.eclipse.m2e.core.project.configurator.AbstractLifecycleMapping.configure(AbstractLifecycleMapping.java:120) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:477) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:166) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:142) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:470) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.configureNewMavenProjects(ProjectConfigurationManager.java:250) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$1.call(ProjectConfigurationManager.java:163) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$1.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:166) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:142) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:96) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1348) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:133) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.ui.internal.wizards.ImportMavenProjectsJob$1.doCreateMavenProjects(ImportMavenProjectsJob.java:73) [org.eclipse.m2e.core.ui_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.ui.internal.wizards.AbstractCreateMavenProjectsOperation.run(AbstractCreateMavenProjectsOperation.java:62) [org.eclipse.m2e.core.ui_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.ui.internal.wizards.ImportMavenProjectsJob.runInWorkspace(ImportMavenProjectsJob.java:82) [org.eclipse.m2e.core.ui_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38) [org.eclipse.core.resources_3.9.1.v20140825-1431.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54) [org.eclipse.core.jobs_3.6.0.v20140424-0053.jar:na]
+Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have not been satisfied.
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modifyInternal(FacetedProject.java:363) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.mergeChangesInternal(FacetedProject.java:1181) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.access$2(FacetedProject.java:1117) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject$1.run(FacetedProject.java:324) ~[na:na]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313) ~[org.eclipse.core.resources_3.9.1.v20140825-1431.jar:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modify(FacetedProject.java:339) ~[na:na]
+	at org.eclipse.m2e.wtp.WebProjectConfiguratorDelegate.configure(WebProjectConfiguratorDelegate.java:150) ~[na:na]
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:93) ~[na:na]
+	... 20 common frames omitted
+2014-10-23 10:12:49,755 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GerenciamentoEspacoFisico:GerEspFisico:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\pom.xml.
+2014-10-23 10:12:50,349 [Worker-2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 6 sec
+2014-10-23 10:12:54,224 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:12:54,240 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\main\resources
+2014-10-23 10:12:54,240 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:12:54,240 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\test\resources
+2014-10-23 10:13:03,287 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:13:03,303 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\main\resources
+2014-10-23 10:13:03,303 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:13:03,303 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\test\resources
+2014-10-23 10:21:36,089 [Worker-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+2014-10-23 10:21:36,573 [Worker-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+2014-10-23 10:21:36,761 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:21:36,901 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JAXRS-RESTEasy/src/main/java
+2014-10-23 10:21:36,901 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /JAXRS-RESTEasy/src/main/resources
+2014-10-23 10:21:36,901 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JAXRS-RESTEasy/src/test/java
+2014-10-23 10:21:36,901 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /JAXRS-RESTEasy/src/test/resources
+2014-10-23 10:21:37,276 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:21:37,495 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:21:37,511 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:21:37,511 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:21:37,511 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:21:37,605 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:21:38,542 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:21:38,558 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:21:38,558 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:21:38,558 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:22:59,719 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:22:59,750 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:22:59,750 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:22:59,766 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:22:59,766 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:23:53,316 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:23:53,566 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:23:53,581 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:23:53,581 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:23:53,581 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:23:57,254 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:23:57,316 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:23:57,316 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:23:57,332 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:23:57,332 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:29:43,194 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:29:44,836 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/resteasy-jaxrs/3.0.4.Final/resteasy-jaxrs-3.0.4.Final.pom
+2014-10-23 10:29:45,273 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/resteasy-jaxrs/3.0.4.Final/resteasy-jaxrs-3.0.4.Final.pom
+2014-10-23 10:29:46,554 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/jaxrs-api/3.0.4.Final/jaxrs-api-3.0.4.Final.pom
+2014-10-23 10:29:46,975 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/jaxrs-api/3.0.4.Final/jaxrs-api-3.0.4.Final.pom
+2014-10-23 10:29:48,116 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.pom
+2014-10-23 10:29:48,538 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.pom
+2014-10-23 10:29:49,430 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.pom
+2014-10-23 10:29:50,648 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/slf4j/slf4j-parent/1.5.8/slf4j-parent-1.5.8.pom
+2014-10-23 10:29:50,851 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.8/slf4j-parent-1.5.8.pom
+2014-10-23 10:29:51,304 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.8/slf4j-parent-1.5.8.pom
+2014-10-23 10:29:52,351 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.pom
+2014-10-23 10:29:52,585 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.pom
+2014-10-23 10:29:53,022 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.pom
+2014-10-23 10:29:54,241 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/scannotation/scannotation/1.0.3/scannotation-1.0.3.pom
+2014-10-23 10:29:54,647 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/scannotation/scannotation/1.0.3/scannotation-1.0.3.pom
+2014-10-23 10:29:55,774 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.pom
+2014-10-23 10:29:57,804 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.pom
+2014-10-23 10:29:59,367 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpclient/4.2.1/httpclient-4.2.1.pom
+2014-10-23 10:29:59,993 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpclient/4.2.1/httpclient-4.2.1.pom
+2014-10-23 10:30:01,774 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpcomponents-client/4.2.1/httpcomponents-client-4.2.1.pom
+2014-10-23 10:30:03,601 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/project/6/project-6.pom
+2014-10-23 10:30:04,633 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.pom
+2014-10-23 10:30:05,118 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.pom
+2014-10-23 10:30:07,399 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpcomponents-core/4.2.1/httpcomponents-core-4.2.1.pom
+2014-10-23 10:30:08,649 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/resteasy-jaxrs/3.0.4.Final/resteasy-jaxrs-3.0.4.Final.jar
+2014-10-23 10:30:10,680 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/resteasy-jaxrs/3.0.4.Final/resteasy-jaxrs-3.0.4.Final.jar
+2014-10-23 10:30:10,868 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/jaxrs-api/3.0.4.Final/jaxrs-api-3.0.4.Final.jar
+2014-10-23 10:30:11,336 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/jaxrs-api/3.0.4.Final/jaxrs-api-3.0.4.Final.jar
+2014-10-23 10:30:11,524 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.jar
+2014-10-23 10:30:12,493 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar
+2014-10-23 10:30:13,305 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/scannotation/scannotation/1.0.3/scannotation-1.0.3.jar
+2014-10-23 10:30:13,946 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/scannotation/scannotation/1.0.3/scannotation-1.0.3.jar
+2014-10-23 10:30:14,150 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.jar
+2014-10-23 10:30:15,962 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.jar
+2014-10-23 10:30:16,165 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpclient/4.2.1/httpclient-4.2.1.jar
+2014-10-23 10:30:16,899 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpclient/4.2.1/httpclient-4.2.1.jar
+2014-10-23 10:30:17,087 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.jar
+2014-10-23 10:30:17,790 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repository.jboss.org/nexus/content/groups/public-jboss/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.jar
+2014-10-23 10:30:18,587 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.jar
+2014-10-23 10:30:18,899 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.jar
+2014-10-23 10:30:19,056 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar
+2014-10-23 10:30:19,541 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar
+2014-10-23 10:30:19,758 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:30:19,774 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:30:19,774 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:30:19,774 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:30:37,650 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:30:37,650 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:30:37,665 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:30:37,665 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:31:34,372 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:31:34,372 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:31:34,372 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:31:34,388 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:34:22,492 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:34:22,492 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:34:22,492 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:34:22,507 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:55:54,943 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:55:54,943 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:55:54,943 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:55:54,943 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:59:50,192 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 10:59:50,708 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:59:50,708 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 10:59:50,708 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 10:59:50,708 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:07:46,159 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GerenciamentoEspacoFisico:GerEspFisico:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\pom.xml.
+2014-10-23 11:07:46,347 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GerEspFisico/src/main/java
+2014-10-23 11:07:46,362 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GerEspFisico/src/test/java
+2014-10-23 11:07:46,425 [Worker-0] ERROR o.e.m2e.wtp.WTPProjectConfigurator - Unable to configure GerEspFisico
+org.eclipse.m2e.wtp.MarkedException: Unable to configure GerEspFisico
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:97) ~[na:na]
+	at org.eclipse.m2e.wtp.WTPProjectConfigurator.configure(WTPProjectConfigurator.java:70) ~[na:na]
+	at org.eclipse.m2e.core.project.configurator.AbstractLifecycleMapping.configure(AbstractLifecycleMapping.java:120) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:477) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:166) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:142) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:470) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.configureNewMavenProjects(ProjectConfigurationManager.java:250) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$1.call(ProjectConfigurationManager.java:163) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$1.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:166) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:142) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:96) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1348) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:133) [org.eclipse.m2e.core_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.ui.internal.wizards.ImportMavenProjectsJob$1.doCreateMavenProjects(ImportMavenProjectsJob.java:73) [org.eclipse.m2e.core.ui_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.ui.internal.wizards.AbstractCreateMavenProjectsOperation.run(AbstractCreateMavenProjectsOperation.java:62) [org.eclipse.m2e.core.ui_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.m2e.core.ui.internal.wizards.ImportMavenProjectsJob.runInWorkspace(ImportMavenProjectsJob.java:82) [org.eclipse.m2e.core.ui_1.5.0.20140606-0033.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38) [org.eclipse.core.resources_3.9.1.v20140825-1431.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54) [org.eclipse.core.jobs_3.6.0.v20140424-0053.jar:na]
+Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have not been satisfied.
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modifyInternal(FacetedProject.java:363) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.mergeChangesInternal(FacetedProject.java:1181) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.access$2(FacetedProject.java:1117) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject$1.run(FacetedProject.java:324) ~[na:na]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313) ~[org.eclipse.core.resources_3.9.1.v20140825-1431.jar:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modify(FacetedProject.java:339) ~[na:na]
+	at org.eclipse.m2e.wtp.WebProjectConfiguratorDelegate.configure(WebProjectConfiguratorDelegate.java:150) ~[na:na]
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:93) ~[na:na]
+	... 20 common frames omitted
+2014-10-23 11:07:46,534 [Worker-0] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2014-10-23 11:07:47,206 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GerenciamentoEspacoFisico:GerEspFisico:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\pom.xml.
+2014-10-23 11:07:47,519 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:07:47,519 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\main\resources
+2014-10-23 11:07:47,534 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:07:47,534 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\test\resources
+2014-10-23 11:07:48,722 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:07:48,738 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\main\resources
+2014-10-23 11:07:48,738 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:07:48,738 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\test\resources
+2014-10-23 11:08:22,771 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GerenciamentoEspacoFisico:GerEspFisico:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\pom.xml.
+2014-10-23 11:08:23,193 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:08:23,193 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\main\resources
+2014-10-23 11:08:23,193 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:08:23,208 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico\src\test\resources
+2014-10-23 11:10:53,209 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:10:53,318 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GEF/src/main/java
+2014-10-23 11:10:53,318 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /GEF/src/main/resources
+2014-10-23 11:10:53,318 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GEF/src/test/java
+2014-10-23 11:10:53,318 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /GEF/src/test/resources
+2014-10-23 11:10:53,802 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:10:54,318 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:10:54,334 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:10:54,334 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:10:54,334 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:10:54,584 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:10:55,568 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:10:55,568 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:10:55,568 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:10:55,568 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:13:44,583 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:13:44,645 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:13:44,661 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:13:44,661 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:13:44,661 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:14:23,976 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:14:24,241 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:14:24,257 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:14:24,273 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:14:24,273 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:14:25,413 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:14:25,507 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:14:25,507 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:14:25,523 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:14:25,617 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:14:26,679 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:14:26,695 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:14:26,695 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:14:26,695 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:23:07,444 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 11:23:19,071 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repository.jboss.org/nexus/content/groups/public/org/apache/httpcomponents/httpclient/4.2.1/httpclient-4.2.1.pom
+2014-10-23 11:23:20,571 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repository.jboss.org/nexus/content/groups/public/org/apache/httpcomponents/httpcomponents-client/4.2.1/httpcomponents-client-4.2.1.pom
+2014-10-23 11:23:22,039 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repository.jboss.org/nexus/content/groups/public/org/apache/httpcomponents/project/6/project-6.pom
+2014-10-23 11:23:23,008 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://files.couchbase.com/maven2/org/apache/httpcomponents/project/6/project-6.pom
+2014-10-23 11:23:24,961 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repository.jboss.org/nexus/content/groups/public/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.pom
+2014-10-23 11:23:25,164 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://files.couchbase.com/maven2/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.pom
+2014-10-23 11:23:27,148 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repository.jboss.org/nexus/content/groups/public/org/apache/httpcomponents/httpcomponents-core/4.2.1/httpcomponents-core-4.2.1.pom
+2014-10-23 11:23:27,368 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://files.couchbase.com/maven2/org/apache/httpcomponents/httpcomponents-core/4.2.1/httpcomponents-core-4.2.1.pom
+2014-10-23 11:23:33,493 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repository.jboss.org/nexus/content/groups/public/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.jar
+2014-10-23 11:23:33,711 [Worker-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://files.couchbase.com/maven2/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.jar
+2014-10-23 11:23:33,789 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:23:33,805 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:23:33,805 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:23:33,805 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:24:57,231 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:24:57,231 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:24:57,247 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:24:57,263 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:29:30,356 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:JAXRS-RESTEasy:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\JAXRS-RESTEasy\pom.xml.
+2014-10-23 11:29:31,325 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:29:31,325 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:29:31,325 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:29:31,340 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:32:09,365 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:32:09,380 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:32:09,380 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:32:09,411 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:32:45,805 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:32:45,805 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:32:45,805 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:32:45,820 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:32:55,008 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:32:55,023 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:32:55,023 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:32:55,023 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:33:11,149 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:33:11,181 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:33:11,196 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:33:11,196 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:33:46,887 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:33:46,902 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:33:46,917 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:33:46,917 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:01,496 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:01,527 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:01,527 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:01,543 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:24,779 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:24,794 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:24,810 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:24,810 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:38,592 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:38,592 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:38,592 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:38,608 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:57,454 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:57,468 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:34:57,468 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:34:57,468 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:35:09,609 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:35:09,609 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:35:09,625 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:35:09,625 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:35:25,829 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:35:25,829 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:35:25,845 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:35:25,845 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:35:41,861 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:35:41,877 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:35:41,892 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:35:41,892 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:36:00,035 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:36:00,035 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 11:36:00,050 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 11:36:00,050 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:41:46,614 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:41:46,630 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:41:46,630 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:41:46,645 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:42:14,729 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:42:14,743 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:42:14,743 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:42:14,743 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:42:40,640 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:42:40,655 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:42:40,671 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:42:40,687 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:42:54,846 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:42:54,862 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:42:54,862 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:42:54,862 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:43:11,271 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:43:11,286 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:43:11,286 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:43:11,286 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:43:46,788 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:43:46,820 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:43:46,820 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:43:46,835 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:44:48,717 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:44:48,717 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:44:48,717 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:44:48,733 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:45:12,594 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:45:12,594 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:45:12,610 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:45:12,610 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:45:23,408 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:45:23,408 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:45:23,408 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:45:23,423 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:45:27,846 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:45:27,861 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:45:27,861 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:45:27,877 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:46:27,852 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.clek.gef:GEF:0.0.1-SNAPSHOT @ C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GEF\pom.xml.
+2014-10-23 12:46:28,367 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:46:28,367 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:46:28,367 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:46:28,367 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:49:59,642 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:49:59,642 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 12:49:59,642 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 12:49:59,642 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 13:15:18,029 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 13:15:18,060 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-10-23 13:15:18,076 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-23 13:15:18,076 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
