@@ -1,4 +1,0 @@
-
-public enum Time {
-	A = "08:00", B, C, D, E, F, G, H, I, J, K, L, M, N, P
-}

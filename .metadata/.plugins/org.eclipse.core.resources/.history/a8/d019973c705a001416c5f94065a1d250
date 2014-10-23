@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="GerEspFisico">
-        <property name="context-root" value="GerEspFisico"/>
-        <property name="java-output-path" value="/GerEspFisico/target/classes"/>
-    </wb-module>
-</project-modules>
