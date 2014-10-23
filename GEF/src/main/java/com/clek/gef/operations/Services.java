@@ -1,25 +1,26 @@
 package com.clek.gef.operations;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.ws.rs.*;
 
 import com.clek.gef.model.*;
 import com.clek.gef.persistence.BD;
 
-@Path("GEF")
+@Path("/")
 public class Services {
 	@GET
-	@Path("consult/rooms")
+	@Path("rooms")
 	@Produces("application/json")
-	public ArrayList<Room> distributedRooms(){
+	public Collection<Room> distributedRooms(){
 		BD bd = BD.getInstance();
 		
 		Room r = new Room(60, "201");
 		
 		Course c = new Course("3424", 4, "Desenv Sis", 60);
 		
-		StudentsClass sc = new StudentsClass(c);
+		StudentsClass sc = new StudentsClass("128",c);
 		
 		ClassTime ct1 = new ClassTime(DayOfWeek.MONDAY, Time.J);
 		ClassTime ct2 = new ClassTime(DayOfWeek.MONDAY, Time.K);
@@ -31,16 +32,32 @@ public class Services {
 		sc.addClassTime(ct3);
 		sc.addClassTime(ct4);
 		
-		r.addClass(ct1, sc);
-		r.addClass(ct2, sc);
-		r.addClass(ct3, sc);
-		r.addClass(ct4, sc);
+		r.addClass(sc);
 		
 		bd.listCourse.add(c);
 		bd.listRooms.add(r);
 		bd.listStudentsClass.add(sc);
 		
-		return bd.listRooms;
+		Collection<Room> col = bd.listRooms;
+		
+		return col;
 	}
+	
+	//apenas recebe o documento. Sera void
+	@PUT
+	@Path("bulk")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public String importFile(){
+		return "sucesso";
+	}
+	
+	@POST
+	@Path("rooms")
+	@Produces("application/json")
+	public String distribute() {
+		return "sucesso";
+	}
+	
 }
 

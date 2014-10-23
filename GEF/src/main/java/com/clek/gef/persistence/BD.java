@@ -23,4 +23,8 @@ public class BD {
 		}
 		return instance;
 	}
+	
+	public static synchronized void setInstance(BD inst){
+		instance = inst;
+	}
 }

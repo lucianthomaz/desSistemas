@@ -1,5 +1,8 @@
 package com.clek.gef.logic;
 
+import com.clek.gef.model.*;
+import com.clek.gef.persistence.*;
+
 public class Distributor {
 	public static Distributor instance;
 	
@@ -14,7 +17,24 @@ public class Distributor {
 		return instance;
 	}
 	
-	private void reset(){
+	public void distrubute(){
+		BD bd = BD.getInstance();
+		if (bd.listStudentsClass.isEmpty() || bd.listRooms.isEmpty()){
+			return;
+		}
 		
+		for (StudentsClass st : bd.listStudentsClass){
+			for (Room r : bd.listRooms){
+				
+			}
+		}
+		
+	}
+	
+	private void reset(){
+		BD bd = BD.getInstance();
+		for (Room r : bd.listRooms){
+			r.reset();
+		}
 	}
 }

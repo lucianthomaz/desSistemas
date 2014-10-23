@@ -5,4 +5,7 @@
 <fullyQualifiedTypeName name="clek.model.Room"/>
 <fullyQualifiedTypeName name="clek.persistence.BD"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="com.clek.gef.persistence.BD"/>
+<fullyQualifiedTypeName name="com.clek.gef.model.Room"/>
 </qualifiedTypeNameHistroy>

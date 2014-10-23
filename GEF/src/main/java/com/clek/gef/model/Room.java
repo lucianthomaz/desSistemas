@@ -1,21 +1,30 @@
 package com.clek.gef.model;
 
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class Room {
 	private int capacity;
 	private String roomName;
-	private HashMap<ClassTime, StudentsClass> classes;
+	private HashSet<StudentsClass> classes;
 	
 	public Room (){
 		
 	}
 	
+	public boolean isFreeTime(ClassTime ct){
+		for (StudentsClass st : classes){
+			if (st.getClassTime().contains(ct)){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public Room (int capacity, String name){
 		this.capacity = capacity;
 		this.roomName = name;
-		this.classes = new HashMap<ClassTime, StudentsClass>();
+		this.classes = new HashSet<StudentsClass>();
 	}
 	
 	public String getRoomName(){
@@ -26,8 +35,8 @@ public class Room {
 		this.roomName = roomName;
 	}
 	
-	public StudentsClass addClass(ClassTime key, StudentsClass value){
-		return classes.put(key, value);
+	public boolean addClass(StudentsClass value){
+		return classes.add(value);
 	}
 	
 	public int getCapacity(){
@@ -38,12 +47,12 @@ public class Room {
 		this.capacity = capacity;
 	}
 	
-	public HashMap<ClassTime, StudentsClass> geClasses(){
+	public HashSet<StudentsClass> getClasses(){
 		return this.classes;
 	}
 	
 	public void reset(){
-		this.classes = new HashMap<ClassTime, StudentsClass>();
+		this.classes = new HashSet<StudentsClass>();
 	}
 	/*
 	public String toString(){

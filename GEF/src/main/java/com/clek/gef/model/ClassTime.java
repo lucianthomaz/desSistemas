@@ -24,4 +24,11 @@ public class ClassTime{
 	public void setTime(Time time){
 		this.time = time;
 	}
+	
+	public boolean equals(ClassTime time){
+		if (time.getDay() == this.day && time.getTime() == this.time){
+			return true;
+		}
+		return false;
+	}
 }

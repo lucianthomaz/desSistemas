@@ -3,7 +3,7 @@
   <groupId>com.clek.gef</groupId>
   <artifactId>GEF</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-	
+  
   <repositories>
   	<repository>
   		<id>JBoss repository</id>
@@ -16,6 +16,11 @@
   		<groupId>org.jboss.resteasy</groupId>
   		<artifactId>resteasy-jaxrs</artifactId>
   		<version>3.0.4.Final</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.jboss.resteasy</groupId>
+  		<artifactId>resteasy-jackson-provider</artifactId>
+  		<version>2.3.1.GA</version>
   	</dependency>
   </dependencies>
 
