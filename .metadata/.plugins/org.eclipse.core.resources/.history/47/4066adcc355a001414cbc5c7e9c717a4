@@ -1,0 +1,25 @@
+import java.util.HashSet;
+f
+
+public class StudentsClass {
+	
+	private Course course;
+	private HashSet<ClassTime> classTime;
+	
+	public StudentsClass (Course disc){
+		this.course = disc;
+		this.classTime = new HashSet<ClassTime>();
+	}
+	
+	public Course getCourse(){
+		return this.course;
+	}
+	
+	public boolean addClassTime(ClassTime time){
+		return this.classTime.add(time);
+	}
+	
+	public HashSet<ClassTime> getClassTime(){
+		return this.classTime;
+	}
+}

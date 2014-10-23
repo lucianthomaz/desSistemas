@@ -1,0 +1,36 @@
+package clek.model;
+
+import java.util.HashMap;
+
+public class Room {
+	private int capacity;
+	private String roomName;
+	private HashMap<ClassTime, StudentsClass> classes;
+	
+	public Room (int capacity, String name){
+		this.capacity = capacity;
+		this.roomName = name;
+		this.classes = new HashMap<ClassTime, StudentsClass>();
+	}
+	
+	public String getRoomName(){
+		return roomName;
+	}
+	
+	public StudentsClass addClass(ClassTime key, StudentsClass value){
+		return classes.put(key, value);
+	}
+	
+	public int getCapacity(){
+		return capacity;
+	}
+	
+	public HashMap<ClassTime, StudentsClass> geClasses(){
+		return this.classes;
+	}
+	
+	public void reset(){
+		this.classes = new HashMap<ClassTime, StudentsClass>();
+	}
+	
+}
