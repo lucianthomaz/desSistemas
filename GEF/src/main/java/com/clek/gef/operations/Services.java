@@ -8,10 +8,10 @@ import javax.ws.rs.*;
 import com.clek.gef.model.*;
 import com.clek.gef.persistence.BD;
 
-@Path("GEF")
+@Path("/")
 public class Services {
 	@GET
-	@Path("consult/rooms")
+	@Path("rooms")
 	@Produces("application/json")
 	public Collection<Room> distributedRooms(){
 		BD bd = BD.getInstance();
@@ -20,7 +20,7 @@ public class Services {
 		
 		Course c = new Course("3424", 4, "Desenv Sis", 60);
 		
-		StudentsClass sc = new StudentsClass(c);
+		StudentsClass sc = new StudentsClass("128",c);
 		
 		ClassTime ct1 = new ClassTime(DayOfWeek.MONDAY, Time.J);
 		ClassTime ct2 = new ClassTime(DayOfWeek.MONDAY, Time.K);
@@ -42,5 +42,22 @@ public class Services {
 		
 		return col;
 	}
+	
+	//apenas recebe o documento. Sera void
+	@PUT
+	@Path("bulk")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public String importFile(){
+		return "sucesso";
+	}
+	
+	@POST
+	@Path("rooms")
+	@Produces("application/json")
+	public String distribute() {
+		return "sucesso";
+	}
+	
 }
 

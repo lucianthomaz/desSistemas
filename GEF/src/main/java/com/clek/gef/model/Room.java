@@ -12,6 +12,15 @@ public class Room {
 		
 	}
 	
+	public boolean isFreeTime(ClassTime ct){
+		for (StudentsClass st : classes){
+			if (st.getClassTime().contains(ct)){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public Room (int capacity, String name){
 		this.capacity = capacity;
 		this.roomName = name;
