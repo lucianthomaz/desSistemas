@@ -1,3 +1,13 @@
-127.0.0.1 - - [23/Oct/2014:11:03:58 -0200] "GET / HTTP/1.1" 404 951
-0:0:0:0:0:0:0:1 - - [23/Oct/2014:11:05:33 -0200] "GET /JAXRS-RESTEasy/services/HelloWorld/JavaCodeGeeks?queryParameter=Enjoy%20RESTEasy HTTP/1.1" 200 42
-0:0:0:0:0:0:0:1 - - [23/Oct/2014:11:05:34 -0200] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [23/Oct/2014:14:41:26 -0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:14:41:33 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 500 113
+127.0.0.1 - - [23/Oct/2014:15:11:51 -0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:15:12:09 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 500 113
+127.0.0.1 - - [23/Oct/2014:15:12:55 -0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:15:13:02 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 500 113
+127.0.0.1 - - [23/Oct/2014:15:37:06 -0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:15:37:15 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 500 117
+127.0.0.1 - - [23/Oct/2014:15:45:51 -0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:15:46:00 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 200 43
+127.0.0.1 - - [23/Oct/2014:15:49:09 -0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:15:49:15 -0200] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [23/Oct/2014:15:49:36 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 200 45

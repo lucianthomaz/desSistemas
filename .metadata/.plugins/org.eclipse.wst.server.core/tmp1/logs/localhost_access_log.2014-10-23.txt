@@ -1,5 +1,0 @@
-127.0.0.1 - - [23/Oct/2014:12:47:24 -0200] "GET / HTTP/1.1" 404 951
-0:0:0:0:0:0:0:1 - - [23/Oct/2014:12:47:29 -0200] "GET /JAXRS-RESTEasy/services/HelloWorld/JavaCodeGeeks?queryParameter=Enjoy%20RESTEasy HTTP/1.1" 404 1047
-0:0:0:0:0:0:0:1 - - [23/Oct/2014:12:48:07 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 500 114
-127.0.0.1 - - [23/Oct/2014:12:50:40 -0200] "GET / HTTP/1.1" 404 951
-0:0:0:0:0:0:0:1 - - [23/Oct/2014:12:50:45 -0200] "GET /GEF/services/GEF/consult/rooms HTTP/1.1" 500 113
