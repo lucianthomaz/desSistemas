@@ -32,7 +32,10 @@ public class Services {
 		sc.addClassTime(ct3);
 		sc.addClassTime(ct4);
 		
-		r.addClass(sc);
+		r.addClass(ct1, sc);
+		r.addClass(ct2, sc);
+		r.addClass(ct3, sc);
+		r.addClass(ct4, sc);
 		
 		bd.listCourse.add(c);
 		bd.listRooms.add(r);

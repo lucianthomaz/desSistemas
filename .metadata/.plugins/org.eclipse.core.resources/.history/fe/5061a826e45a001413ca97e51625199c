@@ -13,7 +13,7 @@ public class Services {
 	@GET
 	@Path("consult/rooms")
 	@Produces("application/json")
-	public Collection<Room> distributedRooms(){
+	public BD distributedRooms(){
 		BD bd = BD.getInstance();
 		
 		Room r = new Room(60, "201");
@@ -32,7 +32,10 @@ public class Services {
 		sc.addClassTime(ct3);
 		sc.addClassTime(ct4);
 		
-		r.addClass(sc);
+		r.addClass(ct1, sc);
+		r.addClass(ct2, sc);
+		r.addClass(ct3, sc);
+		r.addClass(ct4, sc);
 		
 		bd.listCourse.add(c);
 		bd.listRooms.add(r);
@@ -40,7 +43,7 @@ public class Services {
 		
 		Collection<Room> col = bd.listRooms;
 		
-		return col;
+		return bd;
 	}
 }
 
