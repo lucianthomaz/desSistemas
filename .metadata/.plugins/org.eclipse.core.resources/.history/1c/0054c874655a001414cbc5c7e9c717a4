@@ -1,0 +1,8 @@
+package clek.operations;
+
+import javax.ws.rs.*;
+
+@Path("GEF")
+public class Service {
+	
+}
