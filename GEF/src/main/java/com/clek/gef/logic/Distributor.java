@@ -1,5 +1,7 @@
 package com.clek.gef.logic;
 
+import java.util.HashSet;
+
 import com.clek.gef.model.*;
 import com.clek.gef.persistence.*;
 
@@ -11,7 +13,7 @@ public class Distributor {
 	}
 	
 	public static synchronized Distributor getInstance(){
-		if (instance != null){
+		if (instance == null){
 			instance = new Distributor();
 		}
 		return instance;
@@ -25,7 +27,16 @@ public class Distributor {
 		
 		for (StudentsClass st : bd.listStudentsClass){
 			for (Room r : bd.listRooms){
-				
+				HashSet<ClassTime> lstCt = st.getClassTime();
+				boolean alloc = true;
+				for (ClassTime ct : lstCt){
+					if (!r.isFreeTime(ct)){
+						alloc = false;
+					}
+				}
+				if(alloc){
+					r.addClass(st);
+				}
 			}
 		}
 		

@@ -27,4 +27,32 @@ public class BD {
 	public static synchronized void setInstance(BD inst){
 		instance = inst;
 	}
+	
+	public void populate(BD bd){
+		this.listCourse = bd.listCourse;
+		this.listRooms = bd.listRooms;
+		this.listStudentsClass = bd.listStudentsClass;
+	}
+	
+	public void populate(){
+		Room r = new Room(60, "201");
+		
+		Course c = new Course("3424", 4, "Desenv Sis", 60);
+		
+		StudentsClass sc = new StudentsClass("128",c);
+		
+		ClassTime ct1 = new ClassTime(DayOfWeek.MONDAY, Time.J);
+		ClassTime ct2 = new ClassTime(DayOfWeek.MONDAY, Time.K);
+		ClassTime ct3 = new ClassTime(DayOfWeek.MONDAY, Time.L);
+		ClassTime ct4 = new ClassTime(DayOfWeek.MONDAY, Time.M);
+		
+		sc.addClassTime(ct1);
+		sc.addClassTime(ct2);
+		sc.addClassTime(ct3);
+		sc.addClassTime(ct4);
+		
+		listCourse.add(c);
+		listRooms.add(r);
+		listStudentsClass.add(sc);
+	}
 }

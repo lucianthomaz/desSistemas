@@ -1,0 +1,48 @@
+package com.clek.gef.operations;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.ws.rs.*;
+
+import com.clek.gef.logic.Distributor;
+import com.clek.gef.model.*;
+import com.clek.gef.persistence.BD;
+
+@Path("/")
+public class Services {
+	@GET
+	@Path("rooms")
+	@Produces("application/json")
+	public Collection<Room> distributedRooms(){
+		BD bd = BD.getInstance();
+		
+		if (bd.listRooms.isEmpty()){
+			bd.populate();
+		}
+		Distributor d = Distributor.getInstance();
+		d.distrubute();
+		
+		Collection<Room> col = bd.listRooms;
+		
+		return col;
+	}
+	
+	//apenas recebe o documento. Sera void
+	@PUT
+	@Path("bulk")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public String importFile(){
+		return "sucesso";
+	}
+	
+	@POST
+	@Path("rooms")
+	@Produces("application/json")
+	public String distribute() {
+		return "sucesso";
+	}
+	
+}
+
