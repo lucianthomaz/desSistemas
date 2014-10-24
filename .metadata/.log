@@ -5500,3 +5500,107 @@ java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfigu
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-23 23:39:32.799
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2014-10-24 18:00:40.393 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/eduardojaeger/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/eduardojaeger/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2014-10-24 18:00:45.720
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.eclipse.core.net 1 0 2014-10-24 18:00:48.420
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:00:57.409
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:00:57.414
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:00:59.706
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:00:59.708
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:06:21.324
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.core_10.5.1.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:06:21.333
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.plugin.doc_1.1.2.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:06:21.333
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.ui_1.1.2.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:06:21.388
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.core_10.5.1.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:06:21.389
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.plugin.doc_1.1.2.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:06:21.389
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.ui_1.1.2.
+!SESSION 2014-10-24 18:07:37.072 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/eduardojaeger/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/eduardojaeger/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:07:39.544
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.core_10.5.1.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:07:39.553
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.plugin.doc_1.1.2.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:07:39.553
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.ui_1.1.2.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:07:39.642
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.core_10.5.1.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:07:39.643
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.plugin.doc_1.1.2.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-10-24 18:07:39.644
+!MESSAGE Unable to acquire PluginConverter service during generation for: /Users/eduardojaeger/Downloads/eclipse 2/plugins/org.apache.derby.ui_1.1.2.
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2014-10-24 18:07:55.462
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.eclipse.core.net 1 0 2014-10-24 18:07:58.084
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:08:07.533
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:08:07.544
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:10:45.336
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-10-24 18:10:45.346
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
