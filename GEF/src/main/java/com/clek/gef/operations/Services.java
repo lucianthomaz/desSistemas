@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.ws.rs.*;
 
+import com.clek.gef.logic.Distributor;
 import com.clek.gef.model.*;
 import com.clek.gef.persistence.BD;
 
@@ -16,40 +17,41 @@ public class Services {
 	public Collection<Room> distributedRooms(){
 		BD bd = BD.getInstance();
 		
-		Room r = new Room(60, "201");
-		
-		Course c = new Course("3424", 4, "Desenv Sis", 60);
-		
-		StudentsClass sc = new StudentsClass("128",c);
-		
-		ClassTime ct1 = new ClassTime(DayOfWeek.MONDAY, Time.J);
-		ClassTime ct2 = new ClassTime(DayOfWeek.MONDAY, Time.K);
-		ClassTime ct3 = new ClassTime(DayOfWeek.MONDAY, Time.L);
-		ClassTime ct4 = new ClassTime(DayOfWeek.MONDAY, Time.M);
-		
-		sc.addClassTime(ct1);
-		sc.addClassTime(ct2);
-		sc.addClassTime(ct3);
-		sc.addClassTime(ct4);
-		
-		r.addClass(sc);
-		
-		bd.listCourse.add(c);
-		bd.listRooms.add(r);
-		bd.listStudentsClass.add(sc);
+		if (bd.listRooms.isEmpty()){
+			bd.populate();
+		}
+		Distributor d = Distributor.getInstance();
+		d.distrubute();
 		
 		Collection<Room> col = bd.listRooms;
 		
 		return col;
 	}
 	
+	@GET
+	@Path("all")
+	@Produces("application/json")
+	public BD getAllBD(){
+		BD bd = BD.getInstance();
+		
+		if (bd.listRooms.isEmpty()){
+			bd.populate();
+		}
+		Distributor d = Distributor.getInstance();
+		d.distrubute();
+		
+		Collection<Room> col = bd.listRooms;
+		
+		return bd;
+	}
+	
 	//apenas recebe o documento. Sera void
 	@PUT
 	@Path("bulk")
 	@Consumes("application/json")
-	@Produces("application/json")
-	public String importFile(){
-		return "sucesso";
+	public void importFile(BD bd){
+		BD bede = BD.getInstance();
+		bede.populate(bd);
 	}
 	
 	@POST

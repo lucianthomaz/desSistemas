@@ -8,4 +8,6 @@
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.BD"/>
 <fullyQualifiedTypeName name="com.clek.gef.model.Room"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="com.clek.gef.logic.Distributor"/>
 </qualifiedTypeNameHistroy>
