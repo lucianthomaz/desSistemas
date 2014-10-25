@@ -2131,3 +2131,79 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/GEF/pom.xml' d
 2014-10-23 23:39:32,796 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
 2014-10-23 23:39:32,799 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2014-10-23 23:39:32,800 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-24 18:00:57,394 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:00:57,411 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-24 18:00:57,413 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:00:57,414 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-24 18:00:59,706 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:00:59,707 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-24 18:00:59,708 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:00:59,709 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-24 18:08:07,529 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:08:07,542 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-24 18:08:07,544 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:08:07,545 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-24 18:10:45,336 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:10:45,344 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-24 18:10:45,346 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-24 18:10:45,346 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:05:48,098 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:05:48,103 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:05:48,105 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:05:48,105 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:07:28,442 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:07:28,444 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:07:28,445 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:07:28,446 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:08:55,592 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:08:55,600 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:08:55,602 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:08:55,603 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:18:48,167 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:18:48,176 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:18:48,178 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:18:48,178 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:19:01,845 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:19:01,853 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:19:01,855 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:19:01,856 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:20:24,361 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:20:24,370 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:20:24,371 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:20:24,372 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 00:21:58,266 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:21:58,274 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 00:21:58,276 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 00:21:58,276 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 16:24:27,389 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 16:24:27,402 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 16:24:27,404 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 16:24:27,404 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 17:14:17,307 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:14:17,315 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 17:14:17,316 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:14:17,321 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 17:18:37,549 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:18:37,557 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 17:18:37,558 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:18:37,558 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 17:19:31,063 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:19:31,071 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 17:19:31,074 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:19:31,075 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 17:33:01,999 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:33:02,008 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 17:33:02,012 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:33:02,013 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 17:37:20,599 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:37:20,608 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 17:37:20,610 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 17:37:20,610 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 20:08:06,411 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 20:08:06,420 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 20:08:06,421 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 20:08:06,421 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
+2014-10-25 20:08:53,922 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 20:08:53,922 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/main/resources
+2014-10-25 20:08:53,924 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-10-25 20:08:53,925 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/eduardojaeger/desSistemasServer/GEF/src/test/resources
