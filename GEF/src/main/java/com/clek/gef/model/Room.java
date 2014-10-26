@@ -6,6 +6,7 @@ import java.util.HashSet;
 public class Room {
 	private int capacity;
 	private String roomName;
+	private String building;
 	private HashSet<StudentsClass> classes;
 	
 	public Room (){
@@ -25,6 +26,14 @@ public class Room {
 		this.capacity = capacity;
 		this.roomName = name;
 		this.classes = new HashSet<StudentsClass>();
+	}
+	
+	public String getBuilding(){
+		return building;
+	}
+	
+	public void setBuilding(String building){
+		this.building = building;
 	}
 	
 	public String getRoomName(){
