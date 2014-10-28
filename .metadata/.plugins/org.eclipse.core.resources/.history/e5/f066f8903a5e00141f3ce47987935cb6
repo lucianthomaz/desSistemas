@@ -3,9 +3,7 @@ package com.clek.gef.persistence;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.clek.gef.model.Room;
@@ -51,26 +49,5 @@ public class RoomDAO {
 			stmt.execute();
 		}
 		closeConn();
-	}
-	
-	public List<Room> getAllRooms() throws SQLException{
-		openConn();
-		
-		String str = "SELECT * FROM GEFDATABASE.ROOM";
-		PreparedStatement stmt = conn.prepareStatement(str);
-		ResultSet rs = stmt.executeQuery();
-		
-		List<Room> lstRoom = new ArrayList<Room>();
-		while (rs.next()){
-			Room r = new Room();
-			r.setBuilding(rs.getString("BUILDING"));
-			r.setRoomName(rs.getString("CODE_ROOM"));
-			r.setCapacity(rs.getInt("CAPACITY"));
-			lstRoom.add(r);
-		}
-		
-		closeConn();
-		
-		return lstRoom;
 	}
 }
