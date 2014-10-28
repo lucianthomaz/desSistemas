@@ -55,7 +55,6 @@ public class RoomDAO {
 	
 	public List<Room> getAllRooms() throws SQLException{
 		openConn();
-		
 		String str = "SELECT * FROM GEFDATABASE.ROOM";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		ResultSet rs = stmt.executeQuery();
@@ -70,7 +69,6 @@ public class RoomDAO {
 		}
 		
 		closeConn();
-		
 		return lstRoom;
 	}
 }

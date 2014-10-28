@@ -70,7 +70,6 @@ public class RoomDAO {
 		}
 		
 		closeConn();
-		
 		return lstRoom;
 	}
 }
