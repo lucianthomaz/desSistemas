@@ -13,8 +13,17 @@ import com.clek.gef.model.Room;
 public class RoomDAO {
 	private Connection conn;
 	
+	public RoomDAO() throws DBException{
+		try {
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+        } catch (ClassNotFoundException ex) {
+            throw new DBException("Erro ao se conectar com o Banco de Dados, não foi encontrado o Driver.");
+        }
+	}
+	
 	private void openConn() throws SQLException{
-		conn = DriverManager.getConnection("jdbc:derby:MyDB;create=true");
+		
+		conn = DriverManager.getConnection("jdbc:derby:/Users/eduardojaeger/desSistemasServer/MyDB;create=true", "admin", "admin");
 	}
 	
 	private void closeConn() throws SQLException{
@@ -25,7 +34,7 @@ public class RoomDAO {
 	public void persist(Room r) throws SQLException{
 		openConn();
 
-		String str = "INSERT INTO GEFDATABASE.ROOM VALUES (?,?,?)";
+		String str = "INSERT INTO GEFDATABASE.ROOM (ROOM_NAME, BUILDING, CAPACITY) VALUES (?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		
 		stmt.setString(1, r.getRoomName());
@@ -41,7 +50,7 @@ public class RoomDAO {
 		openConn();
 
 		for (Room r : rs){
-			String str = "INSERT INTO GEFDATABASE.ROOM VALUES (?,?,?)";
+			String str = "INSERT INTO GEFDATABASE.ROOM (ROOM_NAME, BUILDING, CAPACITY) VALUES (?,?,?)";
 			PreparedStatement stmt = conn.prepareStatement(str);
 
 			stmt.setString(1, r.getRoomName());
@@ -64,7 +73,7 @@ public class RoomDAO {
 		while (rs.next()){
 			Room r = new Room();
 			r.setBuilding(rs.getString("BUILDING"));
-			r.setRoomName(rs.getString("CODE_ROOM"));
+			r.setRoomName(rs.getString("ROOM_NAME"));
 			r.setCapacity(rs.getInt("CAPACITY"));
 			lstRoom.add(r);
 		}
