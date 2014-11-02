@@ -13,7 +13,7 @@ import com.clek.gef.persistence.PersistenceFacade;
 
 @Path("/")
 public class Services {
-	@GET
+	/*@GET
 	@Path("test")
 	@Produces("application/json")
 	public Collection<Room> test() throws Exception{
@@ -28,25 +28,21 @@ public class Services {
 
 			lstr= pf.getAllRooms();
 		return lstr;
-	}
+	}*/
 	
 	@GET
-	@Path("rooms")
+	@Path("allocation")
 	@Produces("application/json")
-	public Collection<Room> distributedRooms(){
+	public Collection<StudentsClass> distributedRooms(){
 		BD bd = BD.getInstance();
 		
-		if (bd.listRooms.isEmpty()){
-			bd.populate();
-		}
-		//Distributor d = Distributor.getInstance();
-		//d.distrubute();
 		
-		Collection<Room> col = bd.listRooms;
+		Collection<StudentsClass> col = bd.listStudentsClass;
 		
 		return col;
 	}
 	
+	/*
 	@GET
 	@Path("all")
 	@Produces("application/json")
@@ -62,7 +58,7 @@ public class Services {
 		Collection<Room> col = bd.listRooms;
 		
 		return bd;
-	}
+	}*/
 	
 	//apenas recebe o documento. Sera void
 	@PUT
@@ -77,6 +73,14 @@ public class Services {
 	@Path("rooms")
 	@Produces("application/json")
 	public String distribute() {
+		BD bd = BD.getInstance();
+		
+		if (bd.listRooms.isEmpty()){
+			bd.populate();
+		}
+		Distributor d = Distributor.getInstance();
+		d.distrubute();
+		
 		return "sucesso";
 	}
 	

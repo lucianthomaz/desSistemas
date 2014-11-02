@@ -4,7 +4,6 @@ package com.clek.gef.model;
 import java.util.HashSet;
 
 public class Room {
-	private int id = 500;
 	private int capacity;
 	private String roomName;
 	private String building;
@@ -17,10 +16,6 @@ public class Room {
 		this.capacity = capacity;
 		this.roomName = name;
 		this.building = building;
-	}
-	
-	public int gId(){
-		return id;
 	}
 	
 	public String getBuilding(){

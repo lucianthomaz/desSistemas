@@ -23,7 +23,7 @@ public class RoomDAO {
 	
 	private void openConn() throws SQLException{
 		
-		conn = DriverManager.getConnection("jdbc:derby:/Users/eduardojaeger/desSistemasServer/MyDB;create=true", "admin", "admin");
+		conn = DriverManager.getConnection("jdbc:derby:/Users/eduardojaeger/desSistemasServer/GEF/MyDB;create=true", "admin", "admin");
 	}
 	
 	private void closeConn() throws SQLException{
