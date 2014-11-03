@@ -30,22 +30,31 @@ public class Distributor {
 				HashSet<ClassTime> lstCt = st.getClassTime();
 				boolean alloc = true;
 				for (ClassTime ct : lstCt){
-					if (!r.isFreeTime(ct)){
+					if (getOcuppedTimes(r).contains(ct)){
 						alloc = false;
 					}
 				}
 				if(alloc){
-					r.addClass(st);
+					st.setRoomName(r.getRoomName());
+					st.setBuilding(r.getBuilding());
+					st.sRoom(r);
 				}
 			}
 		}
 		
 	}
 	
-	private void reset(){
+	private HashSet<ClassTime> getOcuppedTimes(Room r){
 		BD bd = BD.getInstance();
-		for (Room r : bd.listRooms){
-			r.reset();
+		
+		HashSet<ClassTime> times = new HashSet<ClassTime>();
+		
+		for (StudentsClass sc : bd.listStudentsClass){
+			if (sc.getRoomName().equals(r.getRoomName()) && sc.getBuilding().equals(r.getBuilding())){
+				times.addAll(sc.getClassTime());
+			}
 		}
+		
+		return times;
 	}
 }
