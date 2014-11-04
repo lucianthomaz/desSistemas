@@ -82,4 +82,22 @@ public class RoomDAO {
 		
 		return lstRoom;
 	}
+	
+	public Room getRoom(int id) throws SQLException{
+		openConn();
+		
+		String str = "SELECT * FROM GEFDATABASE.ROOM WHERE GEFDATABASE.ROOM.ID_ROOM = ?";
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setInt(1, id);
+		ResultSet rs = stmt.executeQuery();
+		
+		Room r = new Room();
+		r.setBuilding(rs.getString("BUILDING"));
+		r.setRoomName(rs.getString("ROOM_NAME"));
+		r.setCapacity(rs.getInt("CAPACITY"));
+		
+		closeConn();
+		
+		return r;
+	}
 }
