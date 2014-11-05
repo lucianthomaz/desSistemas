@@ -23,7 +23,7 @@ public class RoomDAO {
 	
 	private void openConn() throws SQLException{
 		
-		conn = DriverManager.getConnection("jdbc:derby:/Users/eduardojaeger/desSistemasServer/GEF/MyDB;create=true", "admin", "admin");
+		conn = DriverManager.getConnection(ConnectionString.connStr, "admin", "admin");
 	}
 	
 	private void closeConn() throws SQLException{
@@ -81,5 +81,67 @@ public class RoomDAO {
 		closeConn();
 		
 		return lstRoom;
+	}
+	
+	protected Room getRoom(int id) throws SQLException{
+		openConn();
+		
+		String str = "SELECT * FROM GEFDATABASE.ROOM WHERE GEFDATABASE.ROOM.ID_ROOM = ?";
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setInt(1, id);
+		ResultSet rs = stmt.executeQuery();
+		
+		Room r = null;
+		if (rs.next()){
+			r = new Room();
+			r.setBuilding(rs.getString("BUILDING"));
+			r.setRoomName(rs.getString("ROOM_NAME"));
+			r.setCapacity(rs.getInt("CAPACITY"));
+		}
+		closeConn();
+		
+		return r;
+	}
+	
+	public Room getRoom(String building, String roomName) throws SQLException{
+		openConn();
+		
+		String str = "SELECT * FROM GEFDATABASE.ROOM WHERE GEFDATABASE.ROOM.ROOM_NAME = ? AND GEFDATABASE.ROOM.BUILDING = ?";
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setString(1, roomName);
+		stmt.setString(2, building);
+		ResultSet rs = stmt.executeQuery();
+		
+		Room r = null;
+		
+		if (rs.next()){
+			r = new Room();
+			r.setBuilding(rs.getString("BUILDING"));
+			r.setRoomName(rs.getString("ROOM_NAME"));
+			r.setCapacity(rs.getInt("CAPACITY"));
+		}
+		closeConn();
+		
+		return r;
+	}
+	
+	protected int getId(Room r) throws SQLException{
+		openConn();
+		
+		String str = "SELECT ID_ROOM FROM GEFDATABASE.ROOM WHERE GEFDATABASE.ROOM.ROOM_NAME = ? AND GEFDATABASE.ROOM.BUILDING = ?";
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setString(1, r.getRoomName());
+		stmt.setString(2, r.getBuilding());
+		ResultSet rs = stmt.executeQuery();
+		
+		int id = 0;
+		
+		if (rs.next()){
+			id = rs.getInt("ID_ROOM");
+		} else {
+			id = -1;
+		}
+		
+		return id;
 	}
 }

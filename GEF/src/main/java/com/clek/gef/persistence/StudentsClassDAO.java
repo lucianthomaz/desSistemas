@@ -9,11 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.clek.gef.model.Course;
+import com.clek.gef.model.StudentsClass;
 
-public class CourseDAO {
+public class StudentsClassDAO {
 private Connection conn;
 	
-	public CourseDAO() throws DBException{
+	public StudentsClassDAO() throws DBException{
 		try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         } catch (ClassNotFoundException ex) {
@@ -31,70 +32,79 @@ private Connection conn;
 		conn.close();
 	}
 	
-	public void persist(Course c) throws SQLException{
+	public void persist(StudentsClass sc) throws SQLException, DBException{
 		openConn();
-
-		String str = "INSERT INTO GEFDATABASE.COURSE (CODE_COURSE, CREDIT, NAME, MODULE) VALUES (?,?,?,?)";
+		
+		CourseDAO cd = new CourseDAO();
+		int id = cd.getId(sc.gCourse());
+		
+		String str = "INSERT INTO GEFDATABASE.STUDENTS_CLASS (NUMBER_STUDENTS_CLASS, ID_COURSE) VALUES (?,?)";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		
-		stmt.setString(1, c.getCode());
-		stmt.setInt(2, c.getCredit());
-		stmt.setString(3, c.getName());
-		stmt.setInt(4, c.getModule());
+		stmt.setString(1, sc.getCode());
+		stmt.setInt(2, id);
 		
 		stmt.execute();
 		
+		//TODO inserir os horarios da turma
+		
 		closeConn();
 	}
 
-	public void persist(List<Course> cs) throws SQLException{
+	public void persist(List<StudentsClass> lsc) throws SQLException, DBException{
 		openConn();
 
-		for (Course c : cs){
-			String str = "INSERT INTO GEFDATABASE.COURSE (CODE_COURSE, CREDIT, NAME, MODULE) VALUES (?,?,?,?)";
+		CourseDAO cd = new CourseDAO();
+		
+		for (StudentsClass sc : lsc){
+			int id = cd.getId(sc.gCourse());
+			
+			String str = "INSERT INTO GEFDATABASE.STUDENTS_CLASS (NUMBER_STUDENTS_CLASS, ID_COURSE) VALUES (?,?)";
 			PreparedStatement stmt = conn.prepareStatement(str);
 			
-			stmt.setString(1, c.getCode());
-			stmt.setInt(2, c.getCredit());
-			stmt.setString(3, c.getName());
-			stmt.setInt(4, c.getModule());
+			stmt.setString(1, sc.getCode());
+			stmt.setInt(2, id);
 			
 			stmt.execute();
+			
+			//TODO inserir os horarios da turma
 		}
 		closeConn();
 	}
 	
-	public List<Course> getAllCourses() throws SQLException{
+	public List<StudentsClass> getAllStudentsClasses() throws SQLException, DBException{
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.COURSE";
+		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		ResultSet rs = stmt.executeQuery();
 		
-		List<Course> lstCourse = new ArrayList<Course>();
+		List<StudentsClass> lstStudentsClass = new ArrayList<StudentsClass>();
+		CourseDAO cd = new CourseDAO();
 		while (rs.next()){
-			Course c = new Course();
-			c.setCode(rs.getString("CODE_COURSE"));
-			c.setCredit(rs.getInt("CREDIT"));
-			c.setModule(rs.getInt("MODULE"));
-			c.setName(rs.getString("NAME"));
-			lstCourse.add(c);
+			StudentsClass sc = new StudentsClass();
+			sc.setCode(rs.getString("CODE_COURSE"));
+			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
+			
+			//TODO pegar horario das turmas
+			
+			lstStudentsClass.add(sc);
 		}
 		
 		closeConn();
 		
-		return lstCourse;
+		return lstStudentsClass;
 	}
 	
-	protected Course getCourse(int id) throws SQLException{
+	protected StudentsClass getStudentsClass(int id) throws SQLException{
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.ID_COURSE = ?";
+		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.ID_STUDENTS_CLASS = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
 		
-		Course c = null;
+		StudentsClass sc = null;
 		if (rs.next()){
 			c = new Course();
 			c.setCode(rs.getString("CODE_COURSE"));
