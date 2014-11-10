@@ -83,7 +83,7 @@ private Connection conn;
 		CourseDAO cd = new CourseDAO();
 		while (rs.next()){
 			StudentsClass sc = new StudentsClass();
-			sc.setCode(rs.getString("CODE_COURSE"));
+			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
 			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
 			
 			//TODO pegar horario das turmas
@@ -96,54 +96,57 @@ private Connection conn;
 		return lstStudentsClass;
 	}
 	
-	protected StudentsClass getStudentsClass(int id) throws SQLException{
+	protected StudentsClass getStudentsClass(int id) throws SQLException, DBException{
 		openConn();
 		
 		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.ID_STUDENTS_CLASS = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
+		CourseDAO cd = new CourseDAO();
+		StudentsClass sc = null;
+		if (rs.next()){
+			sc = new StudentsClass();
+			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
+			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
+			//TODO pegar horario das turmas
+		}
+		closeConn();
+		
+		return sc;
+	}
+	
+	public StudentsClass getStudentsClass(String code, Course c) throws SQLException, DBException{
+		openConn();
+		
+		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.NUMBER_STUDENTS_CLASS = ? AND GEFDATABASE.STUDENTS_CLASS.ID_COURSE = ?";
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setString(1, code);
+		CourseDAO cd = new CourseDAO();
+		int id = cd.getId(c);
+		ResultSet rs = stmt.executeQuery();
 		
 		StudentsClass sc = null;
 		if (rs.next()){
-			c = new Course();
-			c.setCode(rs.getString("CODE_COURSE"));
-			c.setCredit(rs.getInt("CREDIT"));
-			c.setModule(rs.getInt("MODULE"));
-			c.setName(rs.getString("NAME"));
+			sc = new StudentsClass();
+			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
+			sc.sCourse(c);
+			//TODO pegar horario das turmas
 		}
 		closeConn();
 		
-		return c;
+		return sc;
 	}
 	
-	public Course getCourse(String code) throws SQLException{
+	protected int getId(StudentsClass sc) throws SQLException, DBException{
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.CODE_COURSE = ?";
+		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.NUMBER_STUDENTS_CLASS = ? AND GEFDATABASE.STUDENTS_CLASS.ID_COURSE = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
-		stmt.setString(1, code);
-		ResultSet rs = stmt.executeQuery();
-		
-		Course c = null;
-		if (rs.next()){
-			c = new Course();
-			c.setCode(rs.getString("CODE_COURSE"));
-			c.setCredit(rs.getInt("CREDIT"));
-			c.setModule(rs.getInt("MODULE"));
-			c.setName(rs.getString("NAME"));
-		}
-		closeConn();
-		
-		return c;
-	}
-	
-	protected int getId(Course c) throws SQLException{
-		openConn();
-		
-		String str = "SELECT ID_COURSE FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.CODE_COURS = ?";
-		PreparedStatement stmt = conn.prepareStatement(str);
-		stmt.setString(1, c.getCode());
+		stmt.setString(1, sc.getCode());
+		CourseDAO cd = new CourseDAO();
+		int idC = cd.getId(sc.gCourse());
+		stmt.setInt(2, idC);
 		ResultSet rs = stmt.executeQuery();
 		
 		int id = 0;

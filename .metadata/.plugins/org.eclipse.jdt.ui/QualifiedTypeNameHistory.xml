@@ -19,4 +19,6 @@
 <fullyQualifiedTypeName name="com.clek.gef.persistence.DBException"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="com.clek.gef.model.StudentsClass"/>
+<fullyQualifiedTypeName name="com.clek.gef.model.ClassTime"/>
+<fullyQualifiedTypeName name="com.clek.gef.persistence.StudentsClassDAO"/>
 </qualifiedTypeNameHistroy>
