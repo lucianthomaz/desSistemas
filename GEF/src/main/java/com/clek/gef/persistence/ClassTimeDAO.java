@@ -6,11 +6,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.clek.gef.model.ClassTime;
 import com.clek.gef.model.Course;
+import com.clek.gef.model.DayOfWeek;
+import com.clek.gef.model.Room;
 import com.clek.gef.model.StudentsClass;
+import com.clek.gef.model.Time;
 
 public class ClassTimeDAO {
 private Connection conn;
@@ -53,56 +59,68 @@ private Connection conn;
 		stmt.setString(4, ct.getTime().name());
 		stmt.execute();
 		
-		//TODO inserir os horarios da turma
-		
 		closeConn();
 	}
-/*
-	public void persist(List<StudentsClass> lsc) throws SQLException, DBException{
+
+	public void persist(Collection<ClassTime> lct, StudentsClass sc) throws SQLException, DBException{
 		openConn();
 
-		CourseDAO cd = new CourseDAO();
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
 		
-		for (StudentsClass sc : lsc){
-			int id = cd.getId(sc.gCourse());
+		for (ClassTime ct : lct){
+			int idR = 0;
+			if (ct.gRoom() != null){
+				RoomDAO rd = new RoomDAO();
+				idR = rd.getId(ct.gRoom());
+			}
 			
-			String str = "INSERT INTO GEFDATABASE.STUDENTS_CLASS (NUMBER_STUDENTS_CLASS, ID_COURSE) VALUES (?,?)";
+			
+			String str = "INSERT INTO GEFDATABASE.CLASS_TIME (ID_STUDENTS_CLASS, ID_ROOM, DAY_OF_WEEK, CLASS_TIME) VALUES (?,?,?,?)";
 			PreparedStatement stmt = conn.prepareStatement(str);
 			
-			stmt.setString(1, sc.getCode());
-			stmt.setInt(2, id);
-			
+			stmt.setInt(1, idSc);
+			stmt.setInt(2, idR == 0 ? null : idR);
+			stmt.setString(3, ct.getDay().name());
+			stmt.setString(4, ct.getTime().name());
 			stmt.execute();
-			
-			//TODO inserir os horarios da turma
 		}
 		closeConn();
 	}
 	
-	public List<StudentsClass> getAllStudentsClasses() throws SQLException, DBException{
+	public HashSet<ClassTime> getAllClassTime(StudentsClass sc) throws SQLException, DBException{
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
+		
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS";
+		String str = "SELECT * FROM GEFDATABASE.CLASS_TIME WHERE GEFDATABASE.ID_STUDENTS_CLASS = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setInt(1, idSc);
 		ResultSet rs = stmt.executeQuery();
-		
-		List<StudentsClass> lstStudentsClass = new ArrayList<StudentsClass>();
+
+		closeConn();
+		HashSet<ClassTime> lstClassTime = new HashSet<ClassTime>();
 		CourseDAO cd = new CourseDAO();
 		while (rs.next()){
-			StudentsClass sc = new StudentsClass();
-			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
-			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
+			ClassTime ct = new ClassTime();
 			
-			//TODO pegar horario das turmas
+			int indR = rs.getInt("ID_ROOM");
+			if (indR != 0){
+				RoomDAO rd = new RoomDAO();
+				ct.sRoom(rd.getRoom(indR));
+			}
 			
-			lstStudentsClass.add(sc);
+			ct.setDay(DayOfWeek.valueOf(rs.getString("DAY_OF_WEEK")));
+			ct.setTime(Time.valueOf(rs.getString("CLASS_TIME")));
+			
+			lstClassTime.add(ct);
 		}
 		
-		closeConn();
 		
-		return lstStudentsClass;
+		return lstClassTime;
 	}
-	
+	/*
 	protected StudentsClass getStudentsClass(int id) throws SQLException, DBException{
 		openConn();
 		

@@ -65,21 +65,20 @@ private Connection conn;
 		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		ResultSet rs = stmt.executeQuery();
-
-		closeConn();
 		
 		List<StudentsClass> lstStudentsClass = new ArrayList<StudentsClass>();
 		CourseDAO cd = new CourseDAO();
-		ClassTimeDAO ctd = new ClassTimeDAO();
 		while (rs.next()){
 			StudentsClass sc = new StudentsClass();
 			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
 			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
 			
-			sc.setClassTime(ctd.getAllClassTime(sc));
+			//TODO pegar horario das turmas
 			
 			lstStudentsClass.add(sc);
 		}
+		
+		closeConn();
 		
 		return lstStudentsClass;
 	}
@@ -91,43 +90,37 @@ private Connection conn;
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
-
-		closeConn();
-		
 		CourseDAO cd = new CourseDAO();
-		ClassTimeDAO ctd = new ClassTimeDAO();
 		StudentsClass sc = null;
 		if (rs.next()){
 			sc = new StudentsClass();
 			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
 			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
-			sc.setClassTime(ctd.getAllClassTime(sc));
+			//TODO pegar horario das turmas
 		}
+		closeConn();
 		
 		return sc;
 	}
 	
 	public StudentsClass getStudentsClass(String code, Course c) throws SQLException, DBException{
-		CourseDAO cd = new CourseDAO();
-		int idC = cd.getId(c);
-		
 		openConn();
 		
 		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.NUMBER_STUDENTS_CLASS = ? AND GEFDATABASE.STUDENTS_CLASS.ID_COURSE = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setString(1, code);
-		stmt.setInt(2, idC);
+		CourseDAO cd = new CourseDAO();
+		int id = cd.getId(c);
 		ResultSet rs = stmt.executeQuery();
-		closeConn();
-
-		ClassTimeDAO ctd = new ClassTimeDAO();
+		
 		StudentsClass sc = null;
 		if (rs.next()){
 			sc = new StudentsClass();
 			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
 			sc.sCourse(c);
-			sc.setClassTime(ctd.getAllClassTime(sc));
+			//TODO pegar horario das turmas
 		}
+		closeConn();
 		
 		return sc;
 	}

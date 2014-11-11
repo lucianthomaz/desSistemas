@@ -14,10 +14,6 @@ public class ClassTime{
 		this.setDay(day);
 	}
 	
-	public ClassTime(){
-		
-	}
-	
 	public DayOfWeek getDay(){
 		return day;
 	}

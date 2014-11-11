@@ -10,12 +10,15 @@ import java.util.List;
 
 import com.clek.gef.model.ClassTime;
 import com.clek.gef.model.Course;
+import com.clek.gef.model.DayOfWeek;
+import com.clek.gef.model.Room;
 import com.clek.gef.model.StudentsClass;
+import com.clek.gef.model.Time;
 
-public class StudentsClassDAO {
+public class ClassTimeDAO {
 private Connection conn;
 	
-	public StudentsClassDAO() throws DBException{
+	public ClassTimeDAO() throws DBException{
 		try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         } catch (ClassNotFoundException ex) {
@@ -33,57 +36,88 @@ private Connection conn;
 		conn.close();
 	}
 	
-	public void persist(StudentsClass sc) throws SQLException, DBException{
-		
-		
-		CourseDAO cd = new CourseDAO();
-		int id = cd.getId(sc.gCourse());
+	public void persist(ClassTime ct, StudentsClass sc) throws SQLException, DBException{
 		openConn();
-		String str = "INSERT INTO GEFDATABASE.STUDENTS_CLASS (NUMBER_STUDENTS_CLASS, ID_COURSE) VALUES (?,?)";
+		
+		int idR = 0;
+		if (ct.gRoom() != null){
+			RoomDAO rd = new RoomDAO();
+			idR = rd.getId(ct.gRoom());
+		}
+		
+		
+		String str = "INSERT INTO GEFDATABASE.CLASS_TIME (ID_STUDENTS_CLASS, ID_ROOM, DAY_OF_WEEK, CLASS_TIME) VALUES (?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(str);
-		
-		stmt.setString(1, sc.getCode());
-		stmt.setInt(2, id);
-		
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
+		stmt.setInt(1, idSc);
+		stmt.setInt(2, idR == 0 ? null : idR);
+		stmt.setString(3, ct.getDay().name());
+		stmt.setString(4, ct.getTime().name());
 		stmt.execute();
 		
 		closeConn();
-		
-		ClassTimeDAO ctd = new ClassTimeDAO();
-		ctd.persist(sc.getClassTime(), sc);
 	}
 
-	public void persist(List<StudentsClass> lsc) throws SQLException, DBException{
-		for (StudentsClass sc : lsc){
-			this.persist(sc);
+	public void persist(List<ClassTime> lct, StudentsClass sc) throws SQLException, DBException{
+		openConn();
+
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
+		
+		for (ClassTime ct : lct){
+			int idR = 0;
+			if (ct.gRoom() != null){
+				RoomDAO rd = new RoomDAO();
+				idR = rd.getId(ct.gRoom());
+			}
+			
+			
+			String str = "INSERT INTO GEFDATABASE.CLASS_TIME (ID_STUDENTS_CLASS, ID_ROOM, DAY_OF_WEEK, CLASS_TIME) VALUES (?,?,?,?)";
+			PreparedStatement stmt = conn.prepareStatement(str);
+			
+			stmt.setInt(1, idSc);
+			stmt.setInt(2, idR == 0 ? null : idR);
+			stmt.setString(3, ct.getDay().name());
+			stmt.setString(4, ct.getTime().name());
+			stmt.execute();
 		}
+		closeConn();
 	}
 	
-	public List<StudentsClass> getAllStudentsClasses() throws SQLException, DBException{
+	public List<ClassTime> getAllClassTime(StudentsClass sc) throws SQLException, DBException{
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
+		
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS";
+		String str = "SELECT * FROM GEFDATABASE.CLASS_TIME WHERE GEFDATABASE.ID_STUDENTS_CLASS = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setInt(1, idSc);
 		ResultSet rs = stmt.executeQuery();
 
 		closeConn();
-		
-		List<StudentsClass> lstStudentsClass = new ArrayList<StudentsClass>();
+		List<ClassTime> lstClassTime = new ArrayList<ClassTime>();
 		CourseDAO cd = new CourseDAO();
-		ClassTimeDAO ctd = new ClassTimeDAO();
 		while (rs.next()){
-			StudentsClass sc = new StudentsClass();
-			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
-			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
+			ClassTime ct = new ClassTime();
 			
-			sc.setClassTime(ctd.getAllClassTime(sc));
+			int indR = rs.getInt("ID_ROOM");
+			if (indR != 0){
+				RoomDAO rd = new RoomDAO();
+				ct.sRoom(rd.getRoom(indR));
+			}
 			
-			lstStudentsClass.add(sc);
+			ct.setDay(DayOfWeek.valueOf(rs.getString("DAY_OF_WEEK")));
+			ct.setTime(Time.valueOf(rs.getString("CLASS_TIME")));
+			
+			lstClassTime.add(ct);
 		}
 		
-		return lstStudentsClass;
+		
+		return lstClassTime;
 	}
-	
+	/*
 	protected StudentsClass getStudentsClass(int id) throws SQLException, DBException{
 		openConn();
 		
@@ -91,43 +125,37 @@ private Connection conn;
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
-
-		closeConn();
-		
 		CourseDAO cd = new CourseDAO();
-		ClassTimeDAO ctd = new ClassTimeDAO();
 		StudentsClass sc = null;
 		if (rs.next()){
 			sc = new StudentsClass();
 			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
 			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
-			sc.setClassTime(ctd.getAllClassTime(sc));
+			//TODO pegar horario das turmas
 		}
+		closeConn();
 		
 		return sc;
 	}
 	
 	public StudentsClass getStudentsClass(String code, Course c) throws SQLException, DBException{
-		CourseDAO cd = new CourseDAO();
-		int idC = cd.getId(c);
-		
 		openConn();
 		
 		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.NUMBER_STUDENTS_CLASS = ? AND GEFDATABASE.STUDENTS_CLASS.ID_COURSE = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setString(1, code);
-		stmt.setInt(2, idC);
+		CourseDAO cd = new CourseDAO();
+		int id = cd.getId(c);
 		ResultSet rs = stmt.executeQuery();
-		closeConn();
-
-		ClassTimeDAO ctd = new ClassTimeDAO();
+		
 		StudentsClass sc = null;
 		if (rs.next()){
 			sc = new StudentsClass();
 			sc.setCode(rs.getString("NUMBER_STUDENTS_CLASS"));
 			sc.sCourse(c);
-			sc.setClassTime(ctd.getAllClassTime(sc));
+			//TODO pegar horario das turmas
 		}
+		closeConn();
 		
 		return sc;
 	}
@@ -152,5 +180,5 @@ private Connection conn;
 		}
 		
 		return id;
-	}
+	}*/
 }
