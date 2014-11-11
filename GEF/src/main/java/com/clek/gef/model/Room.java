@@ -1,7 +1,6 @@
 package com.clek.gef.model;
 
 
-import java.util.HashSet;
 
 public class Room {
 	private int capacity;

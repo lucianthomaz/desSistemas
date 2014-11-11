@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.clek.gef.model.ClassTime;
 import com.clek.gef.model.Course;
 import com.clek.gef.model.StudentsClass;
 
@@ -133,15 +132,18 @@ private Connection conn;
 	}
 	
 	protected int getId(StudentsClass sc) throws SQLException, DBException{
+		CourseDAO cd = new CourseDAO();
+		int idC = cd.getId(sc.gCourse());
+		
 		openConn();
 		
 		String str = "SELECT * FROM GEFDATABASE.STUDENTS_CLASS WHERE GEFDATABASE.STUDENTS_CLASS.NUMBER_STUDENTS_CLASS = ? AND GEFDATABASE.STUDENTS_CLASS.ID_COURSE = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setString(1, sc.getCode());
-		CourseDAO cd = new CourseDAO();
-		int idC = cd.getId(sc.gCourse());
 		stmt.setInt(2, idC);
 		ResultSet rs = stmt.executeQuery();
+		
+		closeConn();
 		
 		int id = 0;
 		

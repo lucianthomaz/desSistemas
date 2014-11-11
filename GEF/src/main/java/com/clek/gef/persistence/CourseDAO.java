@@ -144,6 +144,8 @@ private Connection conn;
 			id = -1;
 		}
 		
+		closeConn();
+		
 		return id;
 	}
 }

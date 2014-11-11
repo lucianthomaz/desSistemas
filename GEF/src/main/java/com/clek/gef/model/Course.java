@@ -1,8 +1,6 @@
 package com.clek.gef.model;
 
 
-import java.util.HashSet;
-
 
 public class Course {
 	private String code;

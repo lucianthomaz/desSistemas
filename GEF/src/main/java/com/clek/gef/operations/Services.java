@@ -1,6 +1,7 @@
 package com.clek.gef.operations;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
+
 import java.util.Collection;
 
 import javax.ws.rs.*;
@@ -9,7 +10,6 @@ import com.clek.gef.logic.Distributor;
 import com.clek.gef.model.*;
 import com.clek.gef.persistence.BD;
 import com.clek.gef.persistence.DBException;
-import com.clek.gef.persistence.PersistenceFacade;
 
 @Path("/")
 public class Services {
@@ -72,7 +72,7 @@ public class Services {
 	@POST
 	@Path("rooms")
 	@Produces("application/json")
-	public String distribute() {
+	public String distribute() throws DBException, SQLException {
 		BD bd = BD.getInstance();
 		
 		if (bd.listRooms.isEmpty()){

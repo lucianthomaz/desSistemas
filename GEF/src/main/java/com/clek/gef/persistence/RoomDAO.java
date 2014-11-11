@@ -142,6 +142,8 @@ public class RoomDAO {
 			id = -1;
 		}
 		
+		closeConn();
+		
 		return id;
 	}
 }

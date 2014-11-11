@@ -5,16 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import com.clek.gef.model.ClassTime;
-import com.clek.gef.model.Course;
 import com.clek.gef.model.DayOfWeek;
-import com.clek.gef.model.Room;
 import com.clek.gef.model.StudentsClass;
 import com.clek.gef.model.Time;
 
@@ -40,19 +36,19 @@ private Connection conn;
 	}
 	
 	public void persist(ClassTime ct, StudentsClass sc) throws SQLException, DBException{
-		openConn();
-		
 		int idR = 0;
 		if (ct.gRoom() != null){
 			RoomDAO rd = new RoomDAO();
 			idR = rd.getId(ct.gRoom());
 		}
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
 		
+		openConn();
 		
 		String str = "INSERT INTO GEFDATABASE.CLASS_TIME (ID_STUDENTS_CLASS, ID_ROOM, DAY_OF_WEEK, CLASS_TIME) VALUES (?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(str);
-		StudentsClassDAO scd = new StudentsClassDAO();
-		int idSc = scd.getId(sc);
+		
 		stmt.setInt(1, idSc);
 		stmt.setInt(2, idR == 0 ? null : idR);
 		stmt.setString(3, ct.getDay().name());
@@ -62,6 +58,26 @@ private Connection conn;
 		closeConn();
 	}
 
+	public void allocRoom(ClassTime ct, StudentsClass sc) throws DBException, SQLException{
+		RoomDAO rd = new RoomDAO();
+		int idR = rd.getId(ct.gRoom());
+		StudentsClassDAO scd = new StudentsClassDAO();
+		int idSc = scd.getId(sc);
+		String str = "UPDATE GEFDATABASE.CLASS_TIME SET ID_ROOM = ? WHERE ID_STUDENTS_CLASS = ? AND DAY_OF_WEEK = ? AND CLASS_TIME = ?";
+		
+		openConn();
+		
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.setInt(1, idR);
+		stmt.setInt(2, idSc);
+		stmt.setString(3, ct.getDay().name());
+		stmt.setString(4, ct.getTime().name());
+		stmt.execute();
+		
+		closeConn();
+		
+	}
+	
 	public void persist(Collection<ClassTime> lct, StudentsClass sc) throws SQLException, DBException{
 		openConn();
 
@@ -101,7 +117,6 @@ private Connection conn;
 
 		closeConn();
 		HashSet<ClassTime> lstClassTime = new HashSet<ClassTime>();
-		CourseDAO cd = new CourseDAO();
 		while (rs.next()){
 			ClassTime ct = new ClassTime();
 			

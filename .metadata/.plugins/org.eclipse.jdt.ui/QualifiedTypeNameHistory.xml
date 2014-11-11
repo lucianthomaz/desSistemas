@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="clek.model.Room"/>
 <fullyQualifiedTypeName name="clek.persistence.BD"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.BD"/>
 <fullyQualifiedTypeName name="com.clek.gef.logic.Distributor"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -12,13 +11,19 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.clek.gef.model.Room"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.PersistenceFacade"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.DBException"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="com.clek.gef.model.StudentsClass"/>
-<fullyQualifiedTypeName name="com.clek.gef.model.ClassTime"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.StudentsClassDAO"/>
+<fullyQualifiedTypeName name="com.clek.gef.model.Room"/>
+<fullyQualifiedTypeName name="com.clek.gef.persistence.RoomDAO"/>
+<fullyQualifiedTypeName name="com.clek.gef.model.DayOfWeek"/>
+<fullyQualifiedTypeName name="com.clek.gef.model.Time"/>
+<fullyQualifiedTypeName name="com.clek.gef.model.ClassTime"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="com.clek.gef.persistence.ClassTimeDAO"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
