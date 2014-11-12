@@ -30,12 +30,15 @@ public class PersistenceFacade {
 		studentsClassDao = new StudentsClassDAO();
 	}
 	
-	public void persistRoom(Room r) throws SQLException{
-		roomDao.persist(r);
+	public void cleanTables() throws SQLException, DBException{
+		classTimeDao.cleanTable();
+		studentsClassDao.cleanTable();
+		courseDao.cleanTable();
+		roomDao.cleanTable();
 	}
 	
-	public void persistRoom(List<Room> rs) throws SQLException{
-		roomDao.persist(rs);
+	public void persistRoom(Room r) throws SQLException{
+		roomDao.persist(r);
 	}
 	
 	public List<Room> getAllRooms() throws SQLException{
@@ -50,10 +53,6 @@ public class PersistenceFacade {
 		courseDao.persist(c);
 	}
 	
-	public void persistCouse(List<Course> lstCourse) throws SQLException{
-		courseDao.persist(lstCourse);
-	}
-	
 	public List<Course> getAllCourses() throws SQLException{
 		return courseDao.getAllCourses();
 	}
@@ -64,10 +63,6 @@ public class PersistenceFacade {
 	
 	public void persistStudentsClass(StudentsClass sc) throws SQLException, DBException{
 		studentsClassDao.persist(sc);
-	}
-	
-	public void persistStudentsClasses(List<StudentsClass> lstsc) throws SQLException, DBException{
-		studentsClassDao.persist(lstsc);
 	}
 	
 	public List<StudentsClass> getAllStudentsClasses() throws SQLException, DBException{

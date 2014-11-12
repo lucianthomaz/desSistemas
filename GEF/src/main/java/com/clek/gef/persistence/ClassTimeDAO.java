@@ -35,6 +35,14 @@ private Connection conn;
 		conn.close();
 	}
 	
+	public void cleanTable() throws SQLException{
+		String str = "TRUNCATE TABLE GEFDATABASE.CLASS_TIME";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
 	public void persist(ClassTime ct, StudentsClass sc) throws SQLException, DBException{
 		int idR = 0;
 		if (ct.gRoom() != null){

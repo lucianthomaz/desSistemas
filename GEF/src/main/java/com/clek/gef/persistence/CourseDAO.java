@@ -31,6 +31,14 @@ private Connection conn;
 		conn.close();
 	}
 	
+	public void cleanTable() throws SQLException{
+		String str = "TRUNCATE TABLE GEFDATABASE.COURSE";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
 	public void persist(Course c) throws SQLException{
 		openConn();
 
@@ -44,23 +52,6 @@ private Connection conn;
 		
 		stmt.execute();
 		
-		closeConn();
-	}
-
-	public void persist(List<Course> cs) throws SQLException{
-		openConn();
-
-		for (Course c : cs){
-			String str = "INSERT INTO GEFDATABASE.COURSE (CODE_COURSE, CREDIT, NAME, MODULE) VALUES (?,?,?,?)";
-			PreparedStatement stmt = conn.prepareStatement(str);
-			
-			stmt.setString(1, c.getCode());
-			stmt.setInt(2, c.getCredit());
-			stmt.setString(3, c.getName());
-			stmt.setInt(4, c.getModule());
-			
-			stmt.execute();
-		}
 		closeConn();
 	}
 	

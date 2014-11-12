@@ -1,0 +1,50 @@
+{
+    "lstRoom": [
+        {
+            "building": "32",
+            "roomName": "201",
+            "capacity": 60
+        }
+    ],
+    "lstCourse": [
+        {
+            "name": "Desenv Sis",
+            "code": "3424",
+            "credit": 4,
+            "module": 60
+        }
+    ],
+    "lstStudentsClass": [
+        {
+            "code": "128",
+            "courseCode": "3424",
+            "courseName": "Desenv Sis",
+            "classTime": [
+                {
+                    "building": null,
+                    "roomName": null,
+                    "time": "K",
+                    "day": "MONDAY"
+                },
+                {
+                    "building": null,
+                    "roomName": null,
+                    "time": "L",
+                    "day": "MONDAY"
+                },
+                {
+                    "building": null,
+                    "roomName": null,
+                    "time": "M",
+                    "day": "MONDAY"
+                },
+                {
+                    "building": null,
+                    "roomName": null,
+                    "time": "J",
+                    "day": "MONDAY"
+                }
+            ]
+        }
+    ]
+}

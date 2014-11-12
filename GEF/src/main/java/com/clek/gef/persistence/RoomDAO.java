@@ -31,6 +31,14 @@ public class RoomDAO {
 		conn.close();
 	}
 	
+	public void cleanTable() throws SQLException{
+		String str = "TRUNCATE TABLE GEFDATABASE.ROOM";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
 	public void persist(Room r) throws SQLException{
 		openConn();
 
@@ -43,22 +51,6 @@ public class RoomDAO {
 		
 		stmt.execute();
 		
-		closeConn();
-	}
-
-	public void persist(List<Room> rs) throws SQLException{
-		openConn();
-
-		for (Room r : rs){
-			String str = "INSERT INTO GEFDATABASE.ROOM (ROOM_NAME, BUILDING, CAPACITY) VALUES (?,?,?)";
-			PreparedStatement stmt = conn.prepareStatement(str);
-
-			stmt.setString(1, r.getRoomName());
-			stmt.setString(2, r.getBuilding());
-			stmt.setInt(3, r.getCapacity());
-
-			stmt.execute();
-		}
 		closeConn();
 	}
 	

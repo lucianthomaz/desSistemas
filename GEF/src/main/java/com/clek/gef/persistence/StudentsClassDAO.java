@@ -32,6 +32,15 @@ private Connection conn;
 		conn.close();
 	}
 	
+	public void cleanTable() throws SQLException, DBException{
+		//new ClassTimeDAO().cleanTable();
+		String str = "TRUNCATE TABLE GEFDATABASE.STUDENTS_CLASS";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
 	public void persist(StudentsClass sc) throws SQLException, DBException{
 		
 		
@@ -50,12 +59,6 @@ private Connection conn;
 		
 		ClassTimeDAO ctd = new ClassTimeDAO();
 		ctd.persist(sc.getClassTime(), sc);
-	}
-
-	public void persist(List<StudentsClass> lsc) throws SQLException, DBException{
-		for (StudentsClass sc : lsc){
-			this.persist(sc);
-		}
 	}
 	
 	public List<StudentsClass> getAllStudentsClasses() throws SQLException, DBException{
