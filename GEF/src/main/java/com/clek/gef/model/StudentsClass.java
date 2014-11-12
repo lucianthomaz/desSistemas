@@ -4,12 +4,9 @@ import java.util.HashSet;
 public class StudentsClass {
 	
 	private Course course;
-	private Room room;
 	
 	private String code;
 	private HashSet<ClassTime> classTime;
-	private String building;
-	private String roomName;
 	private String courseCode;
 	private String courseName;
 	
@@ -46,21 +43,7 @@ public class StudentsClass {
 		this.classTime = new HashSet<ClassTime>();
 	}
 	
-	public String getRoomName(){
-		return this.roomName;
-	}
-	
-	public void setRoomName(String roomName){
-		this.roomName = roomName;
-	}
-	
-	public String getBuilding(){
-		return this.building;
-	}
-	
-	public void setBuilding(String building){
-		this.building = building;
-	}
+
 	
 	public String getCode(){
 		return this.code;
@@ -70,15 +53,7 @@ public class StudentsClass {
 		this.code = code;
 	}
 	
-	public Room gRoom(){
-		return this.room;
-	}
 	
-	public void sRoom(Room room){
-		this.roomName = room.getRoomName();
-		this.building = room.getBuilding();
-		this.room = room;
-	}
 	
 	public Course gCourse(){
 		return this.course;

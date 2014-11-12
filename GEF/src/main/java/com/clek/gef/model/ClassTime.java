@@ -3,10 +3,19 @@ package com.clek.gef.model;
 public class ClassTime{
 	private DayOfWeek day;
 	private Time time;
+
+	private String building;
+	private String roomName;
+
+	private Room room;
 	
 	public ClassTime(DayOfWeek day, Time time){
 		this.setTime(time);
 		this.setDay(day);
+	}
+	
+	public ClassTime(){
+		
 	}
 	
 	public DayOfWeek getDay(){
@@ -30,5 +39,31 @@ public class ClassTime{
 			return true;
 		}
 		return false;
+	}
+	
+	public String getRoomName(){
+		return this.roomName;
+	}
+	
+	public void setRoomName(String roomName){
+		this.roomName = roomName;
+	}
+	
+	public String getBuilding(){
+		return this.building;
+	}
+	
+	public void setBuilding(String building){
+		this.building = building;
+	}
+	
+	public Room gRoom(){
+		return this.room;
+	}
+	
+	public void sRoom(Room room){
+		this.roomName = room.getRoomName();
+		this.building = room.getBuilding();
+		this.room = room;
 	}
 }

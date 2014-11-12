@@ -1,5 +1,6 @@
 package com.clek.gef.logic;
 
+import java.sql.SQLException;
 import java.util.HashSet;
 
 import com.clek.gef.model.*;
@@ -19,25 +20,24 @@ public class Distributor {
 		return instance;
 	}
 	
-	public void distrubute(){
+	public void distrubute() throws DBException, SQLException{
 		BD bd = BD.getInstance();
 		if (bd.listStudentsClass.isEmpty() || bd.listRooms.isEmpty()){
 			return;
 		}
 		
 		for (StudentsClass st : bd.listStudentsClass){
+			HashSet<ClassTime> lstCt = st.getClassTime();
+			
 			for (Room r : bd.listRooms){
-				HashSet<ClassTime> lstCt = st.getClassTime();
-				boolean alloc = true;
-				for (ClassTime ct : lstCt){
-					if (getOcuppedTimes(r).contains(ct)){
-						alloc = false;
-					}
+				if (st.gCourse().getModule() > r.getCapacity()){
+					continue;
 				}
-				if(alloc){
-					st.setRoomName(r.getRoomName());
-					st.setBuilding(r.getBuilding());
-					st.sRoom(r);
+				for (ClassTime ct : lstCt){
+					if (!getOcuppedTimes(r).contains(ct)){
+						ct.sRoom(r);
+						PersistenceFacade.getInstance().allocRoom(ct, st);
+					}
 				}
 			}
 		}
@@ -50,8 +50,10 @@ public class Distributor {
 		HashSet<ClassTime> times = new HashSet<ClassTime>();
 		
 		for (StudentsClass sc : bd.listStudentsClass){
-			if (sc.getRoomName().equals(r.getRoomName()) && sc.getBuilding().equals(r.getBuilding())){
-				times.addAll(sc.getClassTime());
+			for (ClassTime ct : sc.getClassTime()){
+				if (ct.getBuilding().equals(r.getBuilding()) && ct.getRoomName().equals(r.getRoomName())){
+					times.add(ct);
+				}
 			}
 		}
 		

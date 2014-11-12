@@ -1,0 +1,26 @@
+package com.clek.gef.logic;
+
+import java.sql.SQLException;
+
+import com.clek.gef.model.Room;
+import com.clek.gef.persistence.DBException;
+import com.clek.gef.persistence.PersistenceFacade;
+
+public class RoomController {
+	private static Controller instance;
+	private PersistenceFacade persistence;
+	private RoomController() throws DBException{
+		persistence = PersistenceFacade.getInstance();
+	}
+	
+	public static synchronized Controller getInstance() throws DBException{
+		if (instance == null){
+			instance = new Controller();
+		}
+		return instance;
+	}
+	
+	public void addRoom(Room r) throws SQLException{
+		persistence.persistRoom(r);
+	}
+}
