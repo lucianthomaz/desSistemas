@@ -30,11 +30,18 @@ public class PersistenceFacade {
 		studentsClassDao = new StudentsClassDAO();
 	}
 	
-	public void cleanTables() throws SQLException, DBException{
+	public void cleanTables() throws SQLException{
 		classTimeDao.cleanTable();
 		studentsClassDao.cleanTable();
 		courseDao.cleanTable();
 		roomDao.cleanTable();
+	}
+	
+	public void recreateTables() throws SQLException{
+		roomDao.recreateTable();
+		courseDao.recreateTable();
+		studentsClassDao.recreateTable();
+		classTimeDao.recreateTable();
 	}
 	
 	public void persistRoom(Room r) throws SQLException{

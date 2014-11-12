@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.m2e.core.pom.dependencies">
-	</section>
-	<section name="MavenProjectWizardArtifactPage">
-		<list key="groupId">
-			<item value="com.clek.gef"/>
-		</list>
-		<list key="name">
-		</list>
-		<list key="artifactId">
-			<item value="GEF"/>
-			<item value="JAXRS-RESTEasy"/>
-		</list>
-		<list key="projectNameTemplate">
-			<item value="[artifactId]"/>
-			<item value="[artifactId]-TRUNK"/>
-			<item value="[artifactId]-[version]"/>
-			<item value="[groupId].[artifactId]"/>
-			<item value="[groupId].[artifactId]-[version]"/>
-		</list>
-		<list key="version">
-			<item value="0.0.1-SNAPSHOT"/>
-		</list>
-	</section>
-	<section name="org.eclipse.m2e.core.pom.overview">
-		<list key="ciManagementUrl">
-		</list>
-		<list key="ciManagementSystem">
-		</list>
-		<list key="issueManagementSystem">
-		</list>
-		<list key="issueManagementUrl">
-		</list>
-	</section>
-	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
-		<item value="480" key="width"/>
-		<item value="462" key="x"/>
-		<item value="253" key="y"/>
-		<item value="486" key="height"/>
-	</section>
-	<section name="MavenProjectImportWizardPage">
-		<list key="rootDirectory">
-			<item value="/Users/eduardojaeger/desSistemasServer"/>
-			<item value="C:\Users\Eduardo Jaeger\Documents\desSistemasServer"/>
-			<item value="C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico"/>
-		</list>
-		<list key="projectNameTemplate">
-			<item value="[artifactId]"/>
-			<item value="[artifactId]-TRUNK"/>
-			<item value="[artifactId]-[version]"/>
-			<item value="[groupId].[artifactId]"/>
-			<item value="[groupId].[artifactId]-[version]"/>
-		</list>
-	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -61,6 +8,18 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
@@ -74,12 +33,54 @@
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="486" key="height"/>
+		<item value="480" key="width"/>
+		<item value="253" key="y"/>
+		<item value="462" key="x"/>
+	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
-		<list key="package">
-		</list>
 		<list key="groupId">
 		</list>
+		<list key="package">
+		</list>
 		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\eduardo.jaeger\Documents\desSistemasServer"/>
+			<item value="/Users/eduardojaeger/desSistemasServer"/>
+			<item value="C:\Users\Eduardo Jaeger\Documents\desSistemasServer"/>
+			<item value="C:\Users\Eduardo Jaeger\Documents\desSistemasServer\GerEspFisico"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.clek.gef"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="GEF"/>
+			<item value="JAXRS-RESTEasy"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

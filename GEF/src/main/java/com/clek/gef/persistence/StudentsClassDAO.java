@@ -32,9 +32,21 @@ private Connection conn;
 		conn.close();
 	}
 	
-	public void cleanTable() throws SQLException, DBException{
-		//new ClassTimeDAO().cleanTable();
-		String str = "TRUNCATE TABLE GEFDATABASE.STUDENTS_CLASS";
+	public void cleanTable() throws SQLException{
+		String str = "DROP TABLE GEFDATABASE.STUDENTS_CLASS";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
+	public void recreateTable() throws SQLException{
+		String str = "CREATE TABLE GEFDATABASE.Students_Class ( ID_STUDENTS_CLASS INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," + 
+				"NUMBER_STUDENTS_CLASS VARCHAR(5) NOT NULL," + 
+				"ID_COURSE INTEGER NOT NULL," + 
+				"PRIMARY KEY(ID_STUDENTS_CLASS)," +
+				"FOREIGN KEY(ID_COURSE) REFERENCES GEFDATABASE.Course," +
+				"CONSTRAINT UK_STUDENTS_CLASS UNIQUE (NUMBER_STUDENTS_CLASS, ID_COURSE));";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();

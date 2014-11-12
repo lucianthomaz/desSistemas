@@ -36,7 +36,22 @@ private Connection conn;
 	}
 	
 	public void cleanTable() throws SQLException{
-		String str = "TRUNCATE TABLE GEFDATABASE.CLASS_TIME";
+		String str = "DROP TABLE GEFDATABASE.CLASS_TIME";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
+	public void recreateTable() throws SQLException{
+		String str = "CREATE TABLE GEFDATABASE.Class_Time( ID_CLASS_TIME INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),"+
+				"ID_STUDENTS_CLASS INTEGER NOT NULL,"+
+				"ID_ROOM INTEGER,"+
+				"DAY_OF_WEEK VARCHAR(10) NOT NULL,"+
+				"CLASS_TIME VARCHAR(1) NOT NULL,"+
+				"PRIMARY KEY (ID_CLASS_TIME),"+
+				"FOREIGN KEY(ID_STUDENTS_CLASS) REFERENCES GEFDATABASE.Students_Class,"+
+				"CONSTRAINT UK_CLASS_TIME UNIQUE(ID_STUDENTS_CLASS, DAY_OF_WEEK, CLASS_TIME));";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();

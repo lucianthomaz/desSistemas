@@ -1,0 +1,71 @@
+package com.clek.gef.operations;
+
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.List;
+
+import javax.ws.rs.*;
+
+import com.clek.gef.logic.Distributor;
+import com.clek.gef.logic.Controller;
+import com.clek.gef.model.*;
+import com.clek.gef.persistence.BD;
+import com.clek.gef.persistence.DBException;
+
+@Path("/")
+public class Services {
+	@GET
+	@Path("rooms")
+	@Produces("application/json")
+	public List<Room> getAllRooms() throws Exception{
+		Controller rc = Controller.getInstance();
+		return rc.getAllData().getLstRoom();
+	}
+	
+	@GET
+	@Path("courses")
+	@Produces("application/json")
+	public List<Course> getAllCourses() throws Exception{
+		Controller rc = Controller.getInstance();
+		return rc.getAllData().getLstCourse();
+	}
+	
+	@GET
+	@Path("freeRooms")
+	@Produces("application/json")
+	@Consumes("application/json")
+	public List<Room> getRooms(ClassTime ct) throws DBException, SQLException{
+		Controller c = Controller.getInstance();
+		return c.getFreeRooms(ct);
+	}
+	
+	@GET
+	@Path("allStudentsClass")
+	@Produces("application/json")
+	public List<StudentsClass> distributedRooms() throws SQLException, DBException{
+		return Controller.getInstance().getAllData().getLstStudentsClass();
+	}
+	
+	@PUT
+	@Path("bulk")
+	@Consumes("application/json")
+	public void importFile(Bulk bulk) throws SQLException, DBException{
+		Controller.getInstance().resetDataBase(bulk);
+	}
+	
+	@PUT
+	@Path("studentsClass")
+	@Consumes("application/json")
+	public void addStudentsClass(StudentsClass sc){
+		Controller.getInstance().addOrUpdateStudentsClass(sc);
+	}
+	
+	@GET
+	@Path("bulk")
+	@Produces("application/json")
+	public Bulk getAllData() throws SQLException, DBException{
+		return Controller.getInstance().getAllData();
+	}
+	
+}
+

@@ -1,9 +1,13 @@
 package com.clek.gef.logic;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.clek.gef.model.Bulk;
+import com.clek.gef.model.ClassTime;
+import com.clek.gef.model.Course;
 import com.clek.gef.model.Room;
+import com.clek.gef.model.StudentsClass;
 import com.clek.gef.persistence.DBException;
 import com.clek.gef.persistence.PersistenceFacade;
 
@@ -35,6 +39,7 @@ public class Controller {
 	
 	public void resetDataBase(Bulk bulk) throws SQLException, DBException{
 		persistence.cleanTables();
+		persistence.recreateTables();
 		
 		roomController.addRoom(bulk.getLstRoom());
 		courseController.addCourse(bulk.getLstCourse());
@@ -49,5 +54,27 @@ public class Controller {
 		bulk.setLstStudentsClass(studentsClassController.getAllStudentsClasses());
 		
 		return bulk;
+	}
+	
+	public void distribute() throws SQLException, DBException{
+		Bulk b = getAllData();
+		Distributor.getInstance().distrubute(b);
+	}
+	
+	public List<Room> getFreeRooms(ClassTime ct) throws SQLException, DBException{
+		return Distributor.getInstance().getFreeRoom(getAllData(), ct);
+	}
+	
+	public void addOrUpdateStudentsClass(StudentsClass sc) throws SQLException, DBException{
+		Course c = courseController.getCourse(sc.getCourseCode());
+		if (c == null) return;
+		StudentsClass scaux = studentsClassController.getStudentsClass(sc.getCode(), c);
+		
+		if (scaux == null){
+			sc.sCourse(c);
+			studentsClassController.addStudentsClass(sc);
+		} else {
+			studentsClassController.updateAllocation(scaux);
+		}
 	}
 }
