@@ -138,7 +138,7 @@ private Connection conn;
 		stmt.setInt(1, idSc);
 		ResultSet rs = stmt.executeQuery();
 
-		closeConn();
+		
 		HashSet<ClassTime> lstClassTime = new HashSet<ClassTime>();
 		while (rs.next()){
 			ClassTime ct = new ClassTime();
@@ -155,7 +155,7 @@ private Connection conn;
 			lstClassTime.add(ct);
 		}
 		
-		
+		closeConn();
 		return lstClassTime;
 	}
 	/*

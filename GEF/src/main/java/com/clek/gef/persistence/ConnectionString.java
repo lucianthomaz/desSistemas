@@ -1,6 +1,6 @@
 package com.clek.gef.persistence;
 
 public class ConnectionString {
-	protected static String connStr = "jdbc:derby:/Users/eduardojaeger/desSistemasServer/MyDB;create=true";
-	//protected static String connStr = "jdbc:derby:C:\\Documents and Settings\\PC\\Meus documentos\\github\\desSistemasServer\\GEF;create=true";
+	//protected static String connStr = "jdbc:derby:/Users/eduardojaeger/desSistemasServer/MyDB;create=true";
+	protected static String connStr = "jdbc:derby:C:\\Users\\k\\code\\java\\desSistemasServer\\MyDB;create=true";
 }

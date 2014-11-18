@@ -80,7 +80,7 @@ private Connection conn;
 		PreparedStatement stmt = conn.prepareStatement(str);
 		ResultSet rs = stmt.executeQuery();
 
-		closeConn();
+		
 		
 		List<StudentsClass> lstStudentsClass = new ArrayList<StudentsClass>();
 		CourseDAO cd = new CourseDAO();
@@ -94,7 +94,7 @@ private Connection conn;
 			
 			lstStudentsClass.add(sc);
 		}
-		
+		closeConn();
 		return lstStudentsClass;
 	}
 	
@@ -106,7 +106,7 @@ private Connection conn;
 		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
 
-		closeConn();
+		
 		
 		CourseDAO cd = new CourseDAO();
 		ClassTimeDAO ctd = new ClassTimeDAO();
@@ -117,7 +117,7 @@ private Connection conn;
 			sc.sCourse(cd.getCourse(rs.getInt("ID_COURSE")));
 			sc.setClassTime(ctd.getAllClassTime(sc));
 		}
-		
+		closeConn();
 		return sc;
 	}
 	
@@ -132,7 +132,7 @@ private Connection conn;
 		stmt.setString(1, code);
 		stmt.setInt(2, idC);
 		ResultSet rs = stmt.executeQuery();
-		closeConn();
+		
 
 		ClassTimeDAO ctd = new ClassTimeDAO();
 		StudentsClass sc = null;
@@ -142,7 +142,7 @@ private Connection conn;
 			sc.sCourse(c);
 			sc.setClassTime(ctd.getAllClassTime(sc));
 		}
-		
+		closeConn();
 		return sc;
 	}
 	
@@ -158,7 +158,7 @@ private Connection conn;
 		stmt.setInt(2, idC);
 		ResultSet rs = stmt.executeQuery();
 		
-		closeConn();
+		
 		
 		int id = 0;
 		
@@ -167,7 +167,7 @@ private Connection conn;
 		} else {
 			id = -1;
 		}
-		
+		closeConn();
 		return id;
 	}
 }
