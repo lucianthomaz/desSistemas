@@ -45,7 +45,7 @@ private Connection conn;
 				"CREDIT INTEGER NOT NULL," +
 				"NAME VARCHAR(20) NOT NULL," +
 				"MODULE INTEGER NOT NULL," +
-				"PRIMARY KEY (ID_COURSE));";
+				"PRIMARY KEY (ID_COURSE))";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();
@@ -135,7 +135,7 @@ private Connection conn;
 	protected int getId(Course c) throws SQLException{
 		openConn();
 		
-		String str = "SELECT ID_COURSE FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.CODE_COURS = ?";
+		String str = "SELECT ID_COURSE FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.CODE_COURSE = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setString(1, c.getCode());
 		ResultSet rs = stmt.executeQuery();

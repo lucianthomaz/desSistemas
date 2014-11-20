@@ -61,6 +61,8 @@ public class StudentsClass {
 	
 	public void sCourse(Course course){
 		this.course = course;
+		this.courseCode = course.getCode();
+		this.courseName = course.getName();
 	}
 	
 	public boolean addClassTime(ClassTime time){

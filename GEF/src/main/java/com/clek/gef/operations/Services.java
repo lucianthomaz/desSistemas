@@ -29,7 +29,7 @@ public class Services {
 		return rc.getAllData().getLstCourse();
 	}
 	
-	@GET
+	@POST
 	@Path("freeRooms")
 	@Produces("application/json")
 	@Consumes("application/json")

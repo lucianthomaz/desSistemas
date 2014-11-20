@@ -51,7 +51,7 @@ private Connection conn;
 				"CLASS_TIME VARCHAR(1) NOT NULL,"+
 				"PRIMARY KEY (ID_CLASS_TIME),"+
 				"FOREIGN KEY(ID_STUDENTS_CLASS) REFERENCES GEFDATABASE.Students_Class,"+
-				"CONSTRAINT UK_CLASS_TIME UNIQUE(ID_STUDENTS_CLASS, DAY_OF_WEEK, CLASS_TIME));";
+				"CONSTRAINT UK_CLASS_TIME UNIQUE(ID_STUDENTS_CLASS, DAY_OF_WEEK, CLASS_TIME))";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();
@@ -119,7 +119,7 @@ private Connection conn;
 			PreparedStatement stmt = conn.prepareStatement(str);
 			
 			stmt.setInt(1, idSc);
-			stmt.setInt(2, idR == 0 ? null : idR);
+			stmt.setInt(2, idR);
 			stmt.setString(3, ct.getDay().name());
 			stmt.setString(4, ct.getTime().name());
 			stmt.execute();
@@ -133,7 +133,7 @@ private Connection conn;
 		
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.CLASS_TIME WHERE GEFDATABASE.ID_STUDENTS_CLASS = ?";
+		String str = "SELECT * FROM GEFDATABASE.CLASS_TIME WHERE GEFDATABASE.CLASS_TIME.ID_STUDENTS_CLASS = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setInt(1, idSc);
 		ResultSet rs = stmt.executeQuery();

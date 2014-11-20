@@ -45,7 +45,7 @@ public class RoomDAO {
 				"BUILDING VARCHAR(10) NOT NULL,"+
 				"CAPACITY INTEGER NOT NULL,"+
 				"PRIMARY KEY (ID_ROOM),"+
-				"CONSTRAINT UK_ROOM UNIQUE (ROOM_NAME, BUILDING));";
+				"CONSTRAINT UK_ROOM UNIQUE (ROOM_NAME, BUILDING))";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();
