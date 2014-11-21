@@ -1,22 +1,23 @@
 package com.clek.gef.operations;
 
 import java.sql.SQLException;
-
 import java.util.List;
 
 import javax.ws.rs.*;
 
 import com.clek.gef.logic.Controller;
 import com.clek.gef.model.*;
-
 import com.clek.gef.persistence.DBException;
+import com.clek.gef.persistence.PersistenceFacade;
 
 @Path("/")
 public class Services {
+	//TESTADO FUNCIONANDO
 	@GET
 	@Path("rooms")
 	@Produces("application/json")
 	public List<Room> getAllRooms() throws Exception{
+		PersistenceFacade.getInstance().recreateTables();
 		Controller rc = Controller.getInstance();
 		return rc.getAllData().getLstRoom();
 	}
@@ -29,6 +30,7 @@ public class Services {
 		return rc.getAllData().getLstCourse();
 	}
 	
+	//NAO BOMBOU AINDA
 	@POST
 	@Path("freeRooms")
 	@Produces("application/json")
@@ -45,6 +47,7 @@ public class Services {
 		return Controller.getInstance().getAllData().getLstStudentsClass();
 	}
 	
+	//FUNCIONOU
 	@PUT
 	@Path("bulk")
 	@Consumes("application/json")
@@ -59,6 +62,7 @@ public class Services {
 		Controller.getInstance().addOrUpdateStudentsClass(sc);
 	}
 	
+	//FUNCIONOU
 	@GET
 	@Path("bulk")
 	@Produces("application/json")

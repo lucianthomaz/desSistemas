@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="com.clek.gef.persistence.ClassTimeDAO"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.StudentsClassDAO"/>
 <fullyQualifiedTypeName name="com.clek.gef.persistence.CourseDAO"/>
-<fullyQualifiedTypeName name="com.clek.gef.persistence.PersistenceFacade"/>
 <fullyQualifiedTypeName name="com.clek.gef.logic.RoomController"/>
 <fullyQualifiedTypeName name="com.clek.gef.model.Bulk"/>
 <fullyQualifiedTypeName name="com.clek.gef.logic.CourseController"/>
@@ -32,4 +31,5 @@
 <fullyQualifiedTypeName name="com.clek.gef.model.Course"/>
 <fullyQualifiedTypeName name="com.clek.gef.model.ClassTime"/>
 <fullyQualifiedTypeName name="com.clek.gef.model.Room"/>
+<fullyQualifiedTypeName name="com.clek.gef.persistence.PersistenceFacade"/>
 </qualifiedTypeNameHistroy>
