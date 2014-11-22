@@ -23,26 +23,23 @@ public class Distributor {
 	}
 	
 	public void distrubute(Bulk bulk) throws DBException, SQLException{
-		if (bulk.getLstStudentsClass().isEmpty() || bulk.getLstRoom().isEmpty()){
-			return;
-		}
-		
-		for (StudentsClass st : bulk.getLstStudentsClass()){
-			HashSet<ClassTime> lstCt = st.getClassTime();
-			
-			for (Room r : bulk.getLstRoom()){
-				if (st.gCourse().getModule() > r.getCapacity()){
-					continue;
-				}
-				for (ClassTime ct : lstCt){
-					if (!getOcuppedTimes(bulk, r).contains(ct)){
-						ct.sRoom(r);
-						PersistenceFacade.getInstance().allocRoom(ct, st);
+		if (!bulk.getLstStudentsClass().isEmpty() && !bulk.getLstRoom().isEmpty()){
+			for (StudentsClass st : bulk.getLstStudentsClass()){
+				HashSet<ClassTime> lstCt = st.getClassTime();
+
+				for (Room r : bulk.getLstRoom()){
+					if (st.gCourse().getModule() > r.getCapacity()){
+						continue;
+					}
+					for (ClassTime ct : lstCt){
+						if (!getOcuppedTimes(bulk, r).contains(ct)){
+							ct.sRoom(r);
+							PersistenceFacade.getInstance().allocRoom(ct, st);
+						}
 					}
 				}
 			}
 		}
-		
 	}
 	
 	public List<Room> getFreeRoom(Bulk b, ClassTime ct){
@@ -63,6 +60,9 @@ public class Distributor {
 		
 		for (StudentsClass sc : b.getLstStudentsClass()){
 			for (ClassTime ct : sc.getClassTime()){
+				if (ct.getBuilding() == null || ct.getRoomName() == null){
+					continue;
+				}
 				if (ct.getBuilding().equals(r.getBuilding()) && ct.getRoomName().equals(r.getRoomName())){
 					times.add(ct);
 				}
