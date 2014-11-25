@@ -3,6 +3,7 @@ package com.clek.gef.logic;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.clek.gef.model.Accesses;
 import com.clek.gef.model.Bulk;
 import com.clek.gef.model.ClassTime;
 import com.clek.gef.model.Course;
@@ -35,6 +36,14 @@ public class Controller {
 	
 	public void addRoom(Room r) throws SQLException{
 		roomController.addRoom(r);
+	}
+	
+	public void newAccess() throws SQLException{
+		persistence.newAccess();
+	}
+	
+	public Accesses getAccesses() throws SQLException{
+		return persistence.getAccesses();
 	}
 	
 	public void resetDataBase(Bulk bulk) throws SQLException, DBException{

@@ -12,12 +12,25 @@ import com.clek.gef.persistence.PersistenceFacade;
 
 @Path("/")
 public class Services {
+	@POST
+	@Path("access")
+	public void newAccesses() throws SQLException, DBException{
+		Controller.getInstance().newAccess();
+	}
+	
+	@GET
+	@Path("accesses")
+	@Produces("application/json")
+	public Accesses getAccesses() throws SQLException, DBException{
+		return Controller.getInstance().getAccesses();
+	}
+	
 	//TESTADO FUNCIONANDO
 	@GET
 	@Path("rooms")
 	@Produces("application/json")
 	public List<Room> getAllRooms() throws Exception{
-		PersistenceFacade.getInstance().recreateTables();
+		//PersistenceFacade.getInstance().recreateTables();
 		Controller rc = Controller.getInstance();
 		return rc.getAllData().getLstRoom();
 	}
