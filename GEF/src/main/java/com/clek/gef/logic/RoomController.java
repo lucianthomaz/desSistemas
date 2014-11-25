@@ -34,4 +34,8 @@ public class RoomController {
 	public List<Room> getAllRooms() throws SQLException {
 		return persistence.getAllRooms();
 	}
+	
+	public Room getRoom(String building, String roomName) throws SQLException{
+		return persistence.getRoom(building, roomName);
+	}
 }

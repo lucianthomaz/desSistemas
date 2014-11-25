@@ -34,4 +34,8 @@ public class CourseController {
 	public List<Course> getAllCourses() throws SQLException{
 		return persistence.getAllCourses();
 	}
+	
+	public Course getCourse(String code) throws SQLException{
+		return persistence.getCourse(code);
+	}
 }

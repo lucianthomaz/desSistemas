@@ -32,7 +32,20 @@ private Connection conn;
 	}
 	
 	public void cleanTable() throws SQLException{
-		String str = "TRUNCATE TABLE GEFDATABASE.COURSE";
+		String str = "DROP TABLE GEFDATABASE.COURSE";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
+	public void recreateTable() throws SQLException{
+		String str = "CREATE TABLE GEFDATABASE.Course (ID_COURSE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
+				"CODE_COURSE VARCHAR(5) NOT NULL UNIQUE," +
+				"CREDIT INTEGER NOT NULL," +
+				"NAME VARCHAR(50) NOT NULL," +
+				"MODULE INTEGER NOT NULL," +
+				"PRIMARY KEY (ID_COURSE))";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();
@@ -122,7 +135,7 @@ private Connection conn;
 	protected int getId(Course c) throws SQLException{
 		openConn();
 		
-		String str = "SELECT ID_COURSE FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.CODE_COURS = ?";
+		String str = "SELECT ID_COURSE FROM GEFDATABASE.COURSE WHERE GEFDATABASE.COURSE.CODE_COURSE = ?";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setString(1, c.getCode());
 		ResultSet rs = stmt.executeQuery();

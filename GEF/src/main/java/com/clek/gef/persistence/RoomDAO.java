@@ -32,7 +32,20 @@ public class RoomDAO {
 	}
 	
 	public void cleanTable() throws SQLException{
-		String str = "TRUNCATE TABLE GEFDATABASE.ROOM";
+		String str = "DROP TABLE GEFDATABASE.ROOM";
+		openConn();
+		PreparedStatement stmt = conn.prepareStatement(str);
+		stmt.execute();
+		closeConn();
+	}
+	
+	public void recreateTable() throws SQLException{
+		String str = "CREATE TABLE GEFDATABASE.Room ( ID_ROOM INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
+				"ROOM_NAME VARCHAR(10) NOT NULL,"+
+				"BUILDING VARCHAR(10) NOT NULL,"+
+				"CAPACITY INTEGER NOT NULL,"+
+				"PRIMARY KEY (ID_ROOM),"+
+				"CONSTRAINT UK_ROOM UNIQUE (ROOM_NAME, BUILDING))";
 		openConn();
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.execute();

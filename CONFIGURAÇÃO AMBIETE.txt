@@ -1,0 +1,15 @@
+Configurando o Workspace em uma nova máquina:
+
+1- File>Import>Existing Maven Projects>Next
+2- Selecione 'Root Directory' para a pasta do workspace. Ele irá achar automaticamente o arquivo pom.xml. Clique em Finish.
+3- Clique com o botao direito do mouse no projeto e clique em Properties.
+4- Clique em project facets e clique em Converto to faceted form..
+5- Selecione Dynaamic Web Module e clique em Apply e depois OK.
+6- Abra de novo as propriedades do projeto e selecione Java Build Path. Na aba libraries, adicione os arquivos "derby.jar" e "derbyclient.jar" que se encontram dentro do projeto na pasta lib.
+7- CLique em Deployment Assembly, clique em apply na janela que aparecer.
+8- Clique em Add e selecione Java Build Path Entries.
+9- Selecione Maven Dependencies, derby e derbyclient. Clique em finish.
+10- clique em apply e ok.
+
+Para rodar o server:
+1- Crie um novo servidor Tomcat 7 e mande=o executar o projeto.

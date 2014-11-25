@@ -3,6 +3,7 @@ package com.clek.gef.persistence;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.clek.gef.model.Accesses;
 import com.clek.gef.model.ClassTime;
 import com.clek.gef.model.Course;
 import com.clek.gef.model.Room;
@@ -22,19 +23,36 @@ public class PersistenceFacade {
 	private CourseDAO courseDao;
 	private ClassTimeDAO classTimeDao;
 	private StudentsClassDAO studentsClassDao;
+	private AccessesDAO accessesDao;
 	
 	private PersistenceFacade() throws DBException{
 		roomDao = new RoomDAO();
 		courseDao = new CourseDAO();
 		classTimeDao = new ClassTimeDAO();
 		studentsClassDao = new StudentsClassDAO();
+		accessesDao = new AccessesDAO();
 	}
 	
-	public void cleanTables() throws SQLException, DBException{
+	public void cleanTables() throws SQLException{
 		classTimeDao.cleanTable();
 		studentsClassDao.cleanTable();
 		courseDao.cleanTable();
 		roomDao.cleanTable();
+	}
+	
+	public void recreateTables() throws SQLException{
+		roomDao.recreateTable();
+		courseDao.recreateTable();
+		studentsClassDao.recreateTable();
+		classTimeDao.recreateTable();
+	}
+	
+	public void newAccess() throws SQLException{
+		accessesDao.newAccess();
+	}
+	
+	public Accesses getAccesses() throws SQLException{
+		return accessesDao.getAccesses();
 	}
 	
 	public void persistRoom(Room r) throws SQLException{
