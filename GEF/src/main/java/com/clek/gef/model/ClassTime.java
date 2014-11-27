@@ -1,6 +1,6 @@
 package com.clek.gef.model;
 
-public class ClassTime{
+public class ClassTime implements Comparable<ClassTime>{
 	private DayOfWeek day;
 	private Time time;
 
@@ -34,9 +34,16 @@ public class ClassTime{
 		this.time = time;
 	}
 	
-	public boolean equals(ClassTime time){
-		if (time.getDay() == this.day && time.getTime() == this.time){
-			return true;
+	public int hashCode(){
+		return (int)(Math.pow(day.ordinal()*7, 2) + time.ordinal());
+	}
+	
+	public boolean equals(Object obj){
+		if (obj instanceof ClassTime){
+			ClassTime time = (ClassTime) obj;
+			if (time.getDay() == this.day && time.getTime() == this.time){
+				return true;
+			}
 		}
 		return false;
 	}
@@ -65,5 +72,15 @@ public class ClassTime{
 		this.roomName = room.getRoomName();
 		this.building = room.getBuilding();
 		this.room = room;
+	}
+
+	public int compareTo(ClassTime o) {
+		if (this.day.ordinal() > o.day.ordinal()){
+			return 1;
+		}
+		if (this.day.ordinal() < o.day.ordinal()){
+			return -1;
+		}
+		return 0;
 	}
 }

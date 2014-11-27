@@ -1,0 +1,21 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.clek.gef.model.Course;
+import com.clek.gef.model.Room;
+import com.clek.gef.model.StudentsClass;
+
+
+public class All {
+
+	@Test
+	public void testDistribution() {
+		Room r = new Room(60, "LabCG", "P32");
+		Course c = new Course("4546H", 4, "Dev Sis", 60);
+		StudentsClass sc = new StudentsClass("128", c);
+		
+		
+	}
+
+}

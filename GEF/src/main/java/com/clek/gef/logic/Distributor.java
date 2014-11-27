@@ -25,7 +25,7 @@ public class Distributor {
 	public void distrubute(Bulk bulk) throws DBException, SQLException{
 		if (!bulk.getLstStudentsClass().isEmpty() && !bulk.getLstRoom().isEmpty()){
 			for (StudentsClass st : bulk.getLstStudentsClass()){
-				HashSet<ClassTime> lstCt = st.getClassTime();
+				ArrayList<ClassTime> lstCt = st.getClassTime();
 
 				for (Room r : bulk.getLstRoom()){
 					if (st.gCourse().getModule() > r.getCapacity()){
@@ -60,7 +60,7 @@ public class Distributor {
 		
 		for (StudentsClass sc : b.getLstStudentsClass()){
 			for (ClassTime ct : sc.getClassTime()){
-				if (ct.getBuilding() == null || ct.getRoomName() == null){
+				if (ct.getBuilding() == null || ct.getRoomName() == null || ct.gRoom() == null){
 					continue;
 				}
 				if (ct.getBuilding().equals(r.getBuilding()) && ct.getRoomName().equals(r.getRoomName())){

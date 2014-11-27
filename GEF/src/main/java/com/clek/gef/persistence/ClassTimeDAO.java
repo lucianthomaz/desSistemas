@@ -5,8 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 
 import com.clek.gef.model.ClassTime;
@@ -127,19 +128,19 @@ private Connection conn;
 		closeConn();
 	}
 	
-	public HashSet<ClassTime> getAllClassTime(StudentsClass sc) throws SQLException, DBException{
+	public ArrayList<ClassTime> getAllClassTime(StudentsClass sc) throws SQLException, DBException{
 		StudentsClassDAO scd = new StudentsClassDAO();
 		int idSc = scd.getId(sc);
 		
 		openConn();
 		
-		String str = "SELECT * FROM GEFDATABASE.CLASS_TIME WHERE GEFDATABASE.CLASS_TIME.ID_STUDENTS_CLASS = ?";
+		String str = "SELECT * FROM GEFDATABASE.CLASS_TIME WHERE GEFDATABASE.CLASS_TIME.ID_STUDENTS_CLASS = ? ORDER BY DAY_OF_WEEK ASC, CLASS_TIME ASC";
 		PreparedStatement stmt = conn.prepareStatement(str);
 		stmt.setInt(1, idSc);
 		ResultSet rs = stmt.executeQuery();
 
 		
-		HashSet<ClassTime> lstClassTime = new HashSet<ClassTime>();
+		ArrayList<ClassTime> lstClassTime = new ArrayList<ClassTime>();
 		while (rs.next()){
 			ClassTime ct = new ClassTime();
 			
@@ -156,6 +157,8 @@ private Connection conn;
 		}
 		
 		closeConn();
+		
+		Collections.sort(lstClassTime);
 		return lstClassTime;
 	}
 	/*

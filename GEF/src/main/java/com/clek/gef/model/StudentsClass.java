@@ -1,4 +1,5 @@
 package com.clek.gef.model;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class StudentsClass {
@@ -6,7 +7,7 @@ public class StudentsClass {
 	private Course course;
 	
 	private String code;
-	private HashSet<ClassTime> classTime;
+	private ArrayList<ClassTime> classTime;
 	private String courseCode;
 	private String courseName;
 	
@@ -27,7 +28,7 @@ public class StudentsClass {
 	}
 
 	public StudentsClass(){
-		this.classTime = new HashSet<ClassTime>();
+		this.classTime = new ArrayList<ClassTime>();
 	}
 	
 	public StudentsClass (String code, Course disc){
@@ -35,12 +36,12 @@ public class StudentsClass {
 		this.courseCode = disc.getCode();
 		this.courseName = disc.getName();
 		this.code = code;
-		this.classTime = new HashSet<ClassTime>();
+		this.classTime = new ArrayList<ClassTime>();
 	}
 	
 	public StudentsClass (String code){
 		this.code = code;
-		this.classTime = new HashSet<ClassTime>();
+		this.classTime = new ArrayList<ClassTime>();
 	}
 	
 
@@ -69,11 +70,11 @@ public class StudentsClass {
 		return this.classTime.add(time);
 	}
 	
-	public void setClassTime(HashSet<ClassTime> classTime){
+	public void setClassTime(ArrayList<ClassTime> classTime){
 		this.classTime = classTime;
 	}
 	
-	public HashSet<ClassTime> getClassTime(){
+	public ArrayList<ClassTime> getClassTime(){
 		return this.classTime;
 	}
 	

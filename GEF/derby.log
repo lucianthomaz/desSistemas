@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Nov 25 16:42:20 BRST 2014:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instância a816c00e-0149-e842-eb63-00000836d180
+no diretório de banco de dados /Users/eduardojaeger/desSistemasServer/MyDB 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_05-b13
+user.dir=/Users/eduardojaeger/desSistemasServer/GEF
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.1
+derby.system.home=null
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''

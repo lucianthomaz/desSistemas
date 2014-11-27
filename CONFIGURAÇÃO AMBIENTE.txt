@@ -1,0 +1,20 @@
+Configurando o Workspace em uma nova máquina:
+
+1- Abra o Eclipse EE e vá em File>Import>Existing Maven Projects>Next
+2- Selecione 'Root Directory' para a pasta do workspace (pasta deste arquivo). Ele irá achar automaticamente o arquivo pom.xml. Clique em Finish.
+3- Clique com o botão direito do mouse no projeto e clique em ‘Properties’.
+4- Clique em “Project Facets” na aba lateral esquerda da janela e clique em “Converto to faceted form” na parte central da janela.
+5- Na lista de recursos que aparecer, selecione “Dynamic Web Module” e clique em Apply e depois OK.
+6- Abra novamente as propriedades do projeto (botão direito no projeto e ‘Properties’) e selecione na aba lateral esquerda “Java Build Path”. Na parte central, entre na aba “Libraries”, adicione os arquivos "derby.jar" e "derbyclient.jar" que se encontram na pasta lib, abaixo da pasta raiz do projeto. 
+7- Clique em “Deployment Assembly” na aba lateral esquerda (caso pergunte se deseja aplicar as mudanças, confirme a operação).
+8- Clique no botão “Add” e selecione “Java Build Path Entries”.
+9- Na janela que abrir, selecione “Maven Dependencies”, “derby.jar” e “derbyclient.jar”. Clique em finish.
+10- Clique em “Apply” e depois em “OK”.
+
+Para rodar o server:
+1- Crie um novo servidor usando Tomcat 7 e mande-o executar o projeto.
+
+Para rodar o servidor python:
+1- Abra o Terminal.
+2- Localize a pasta do cliente.
+3- Execute a linha de comando: “python run.py”
